@@ -14,8 +14,8 @@ export default function Stalker() {
 
       <HeroBanner
         bgImage={heroImage}
-        title="Stalker Mode"
-        description="Observing patterns, projects, and late-night commits."
+        title="Shivam Kumar"
+        description="I like breaking things (ethically), building things (properly), and obsessing over how systems behave in the real world from AI-powered searches to security puzzles and side projects that got a little out of hand."
       />
 
       <AutoScrollRow title="Today's Top Picks for Stalker" />

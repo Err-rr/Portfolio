@@ -14,8 +14,8 @@ export default function Recruiter() {
 
       <HeroBanner
         bgImage={heroImage}
-        title="Recruiter Mode"
-        description="Evaluating impact, experience, and real-world problem solving."
+        title="Shivam Kumar"
+        description="A full-stack and AI-focused engineer with a strong product mindset, experienced in delivering scalable web applications, intelligent search systems, and production-ready solutions from concept to deployment."
       />
 
       <AutoScrollRow title="Today's Top Picks for Recruiter" />

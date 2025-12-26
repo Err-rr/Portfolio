@@ -14,8 +14,8 @@ export default function Developer() {
 
       <HeroBanner
         bgImage={heroImage}
-        title="Developer Mode"
-        description="Building scalable systems, AI products, and full-stack experiences."
+        title="Shivam Kumar"
+        description="I build intelligent, end-to-end systems crafting React driven interfaces, Flask powered backends, and AI pipelines using CLIP embeddings—to turn complex ideas into scalable, real-world products."
       />
 
       <AutoScrollRow title="Today's Top Picks for Developer" />

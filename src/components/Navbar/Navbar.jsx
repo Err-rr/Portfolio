@@ -11,9 +11,9 @@ export default function Navbar({ profileImage }) {
 
         <ul className="nav-links">
           <li onClick={() => navigate("/")}>Home</li>
-          <li>Professional</li>
-          <li>Skills</li>
-          <li>Projects</li>
+          <li onClick={() => navigate("/professional")}>Professional</li>
+          <li onClick={() => navigate("/skills")}>Skills</li>
+          <li onClick={() => navigate("/projects")}>Projects</li>
         </ul>
       </div>
 

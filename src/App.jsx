@@ -7,6 +7,9 @@ import WhoIsWatching from "./components/ProfileSelect/WhoIsWatching";
 import Developer from "./pages/Developer";
 import Recruiter from "./pages/Recruiter";
 import Stalker from "./pages/Stalker";
+import Professional from "./pages/Professional";
+import Skills from "./pages/Skills";
+import Projects from "./pages/Projects";
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -32,6 +35,11 @@ export default function App() {
             <Route path="/developer" element={<Developer />} />
             <Route path="/recruiter" element={<Recruiter />} />
             <Route path="/stalker" element={<Stalker />} />
+            <Route path="/professional" element={<Professional />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+
+
           </Routes>
         </BrowserRouter>
       )}

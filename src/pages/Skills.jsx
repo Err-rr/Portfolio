@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar/Navbar";
-import "./skills.css";
+import "./Skills.css";
 
 import {
   FaPython,

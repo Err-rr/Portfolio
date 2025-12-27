@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar/Navbar";
-import "./projects.css";
+import "./Projects.css";
 
 import developerProfile from "../assets/profiles/developer.png";
 

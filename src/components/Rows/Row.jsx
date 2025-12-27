@@ -1,4 +1,4 @@
-import "./row.css";
+import "./Row.css";
 
 export default function Row({ title }) {
   return (

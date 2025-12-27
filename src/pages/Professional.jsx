@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { FaBriefcase, FaGraduationCap, FaStar } from "react-icons/fa";
 
 import Navbar from "../components/Navbar/Navbar";
-import "./professional.css";
+import "./Professional.css";
 
 import developerProfile from "../assets/profiles/developer.png";
 

@@ -1,54 +1,101 @@
 .hero {
   position: relative;
-  height: 90vh;
+  height: 82vh; 
   background-size: cover;
   background-position: center;
 
   display: flex;
   align-items: center;
-  padding: clamp(20px, 6vw, 80px);
+  padding-left: clamp(24px, 6vw, 96px);
+  color: #fff;
+}
+
+/* Strong Netflix left gradient */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.6) 35%,
+    rgba(0, 0, 0, 0.25) 60%,
+    rgba(0, 0, 0, 0) 80%
+  );
+  z-index: 1;
 }
 
 .hero-content {
-  max-width: 600px;
+  position: relative;
   z-index: 2;
+  max-width: 640px;
 }
 
-.hero-content h1 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  margin-bottom: 16px;
+/* Bigger, tighter title like Netflix originals */
+.hero-title {
+  font-size: clamp(2.6rem, 5.5vw, 4.6rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 18px;
 }
 
-.hero-content p {
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-  line-height: 1.5;
-  max-width: 500px;
+/* Narrower paragraph for readability */
+.hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #e6e6e6;
+  max-width: 520px;
 }
 
+/* Netflix button row */
 .hero-buttons {
-  margin-top: 20px;
+  margin-top: 28px;
   display: flex;
-  gap: 12px;
+  gap: 14px;
 }
 
-.play {
-  background: white;
-  color: black;
-  padding: 10px 22px;
+/* Shared button base */
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 26px;
+  font-size: 0.95rem;
+  font-weight: 600;
+
   border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
-.info {
-  background: rgba(109, 109, 110, 0.7);
-  color: white;
-  padding: 10px 22px;
-  border-radius: 4px;
+/* Netflix Play */
+.hero-btn.play {
+  background: #ffffff;
+  color: #000000;
 }
 
+.hero-btn.play:hover {
+  background: #e6e6e6;
+  transform: scale(1.03);
+}
+
+/* Netflix Info */
+.hero-btn.info {
+  background: rgba(109, 109, 110, 0.65);
+  color: #ffffff;
+}
+
+.hero-btn.info:hover {
+  background: rgba(109, 109, 110, 0.85);
+  transform: scale(1.03);
+}
+
+/* Bottom fade into rows */
 .hero-fade {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 120px;
+  height: 150px;
   background: linear-gradient(to top, #141414, transparent);
+  z-index: 2;
 }

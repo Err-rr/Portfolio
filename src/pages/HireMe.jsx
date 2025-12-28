@@ -19,7 +19,7 @@ export default function HireMe() {
       <div className="hire-container">
         <div className="hire-card">
           <img
-            src="https://your-image-url.jpg"
+            src="https://res.cloudinary.com/dm6s07nls/image/upload/v1766922204/WhatsApp_Image_2025-09-24_at_22.54.35_6f0a3a7c_p4niti.jpg"
             alt="Shivam Kumar"
             className="hire-avatar"
           />

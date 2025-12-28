@@ -14,7 +14,7 @@ export default function Navbar({ profileImage, activeProfile }) {
         <span className="logo">SHIVAM KUMAR</span>
 
         <ul className="nav-links">
-          <li onClick={() => go("/")}>Home</li>
+          <li onClick={() => go("/profiles")}>Home</li>
           <li onClick={() => go("/professional")}>Professional</li>
           <li onClick={() => go("/skills")}>Skills</li>
           <li onClick={() => go("/projects")}>Projects</li>

@@ -1,4 +1,4 @@
-import "./hero.css";
+import "./Hero.css";
 import { FaPlay, FaInfoCircle } from "react-icons/fa";
 
 export default function HeroBanner({ bgImage, title, description }) {

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 import introSound from "../../assets/sounds/netflix-intro.mp3";
-import "./intro.css";
+import "./Intro.css";
 
 export default function NetflixIntro() {
   const navigate = useNavigate();

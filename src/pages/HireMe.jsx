@@ -1,4 +1,4 @@
-import "./hireme.css";
+import "./Hireme.css";
 import { FaEnvelope, FaPhoneAlt, FaLinkedin } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";

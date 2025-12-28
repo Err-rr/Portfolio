@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./profile.css";
+import "./Profile.css";
 
 import developerImg from "../../assets/profiles/developer.png";
 import recruiterImg from "../../assets/profiles/recruiter.png";

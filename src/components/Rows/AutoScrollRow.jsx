@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import "./row.css";
+import "./Row.css";
 
 export default function AutoScrollRow({ title }) {
   const rowRef = useRef(null);

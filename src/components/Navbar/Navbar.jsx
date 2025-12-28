@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import "./navbar.css";
+import "./Navbar.css";
 
 export default function Navbar({ profileImage, activeProfile }) {
   const navigate = useNavigate();

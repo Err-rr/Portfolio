@@ -51,15 +51,15 @@ export default function HireMe() {
         </div>
 
         <p className="hire-chat">
-          I’m always up for a chat or a coffee — feel free to reach out.
+          I’m always up for a chat or a coffee, feel free to reach out !!
         </p>
 
         <div className="hire-contact">
           <span>
-            <FaEnvelope size={18} /> shivam@email.com
+            <FaEnvelope size={18}  color= "#e50914" /> shivam@email.com
           </span>
           <span>
-            <FaPhoneAlt size={18} /> +91 XXXXXXXXXX
+            <FaPhoneAlt size={18} color= "#e50914" /> +91 XXXXXXXXXX
           </span>
         </div>
 

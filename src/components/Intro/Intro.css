@@ -1,3 +1,6 @@
+/* =========================
+   FULLSCREEN INTRO SCREEN
+========================= */
 .intro-screen {
   position: fixed;
   inset: 0;
@@ -9,15 +12,20 @@
 
   cursor: pointer;
   z-index: 9999;
+
+  overflow: hidden; /* CRITICAL: prevents zoom overflow on small screens */
 }
 
-/* BASE TEXT — SMALL & CENTERED */
+/* =========================
+   BASE TEXT (RESPONSIVE)
+========================= */
 .intro-text {
   color: #e50914;
   font-weight: 800;
 
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  letter-spacing: 0.45em;
+  /* Fluid typography across ALL screens */
+  font-size: clamp(1.6rem, 6vw, 3.2rem);
+  letter-spacing: clamp(0.18em, 1.2vw, 0.45em);
 
   white-space: nowrap;
   text-align: center;
@@ -25,14 +33,21 @@
   transform-origin: center center;
   transform: scale(1);
   opacity: 1;
+
+  will-change: transform, opacity; /* smoother animation on low-end devices */
 }
 
-/* EXIT ANIMATION — SLOW, CINEMATIC */
+/* =========================
+   EXIT ANIMATION
+========================= */
 .intro-text.exit {
   animation: netflixZoomOut 2.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: 120ms; /* lets the text be FELT */
+  animation-delay: 120ms;
 }
 
+/* =========================
+   KEYFRAMES (BASE)
+========================= */
 @keyframes netflixZoomOut {
   0% {
     transform: scale(1);
@@ -40,12 +55,57 @@
   }
 
   20% {
-    transform: scale(1.05); /* subtle weight before motion */
+    transform: scale(1.05);
     opacity: 1;
   }
 
   100% {
-    transform: scale(3.3);
+    transform: scale(var(--zoom-scale, 3));
     opacity: 0;
+  }
+}
+
+/* =========================
+   MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+  .intro-text {
+    letter-spacing: 0.2em;
+  }
+
+  .intro-text.exit {
+    --zoom-scale: 2.4; /* prevent over-blow on small screens */
+  }
+}
+
+/* =========================
+   TABLET (481px – 768px)
+========================= */
+@media (min-width: 481px) and (max-width: 768px) {
+  .intro-text.exit {
+    --zoom-scale: 2.8;
+  }
+}
+
+/* =========================
+   LAPTOP / DESKTOP (769px – 1440px)
+========================= */
+@media (min-width: 769px) and (max-width: 1440px) {
+  .intro-text.exit {
+    --zoom-scale: 3.3;
+  }
+}
+
+/* =========================
+   LARGE & ULTRA-WIDE SCREENS
+========================= */
+@media (min-width: 1441px) {
+  .intro-text {
+    font-size: clamp(3rem, 4vw, 4rem);
+    letter-spacing: 0.5em;
+  }
+
+  .intro-text.exit {
+    --zoom-scale: 3.8;
   }
 }

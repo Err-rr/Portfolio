@@ -1,19 +1,24 @@
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar({ profileImage, activeProfile }) {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const go = (path) => {
     navigate(path, { state: { profile: activeProfile } });
+    setMenuOpen(false); // close menu on navigation (mobile)
   };
 
   return (
     <nav className="netflix-navbar">
       <div className="nav-left">
-        <span className="logo">SHIVAM KUMAR</span>
+        <span className="logo" onClick={() => go("/profiles")}>
+          SHIVAM KUMAR
+        </span>
 
-        <ul className="nav-links">
+        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li onClick={() => go("/profiles")}>Home</li>
           <li onClick={() => go("/professional")}>Professional</li>
           <li onClick={() => go("/skills")}>Skills</li>
@@ -22,14 +27,21 @@ export default function Navbar({ profileImage, activeProfile }) {
       </div>
 
       <div className="nav-right">
-        {/* Hire Me already passes state correctly */}
         <Link
           to="/hire-me"
           state={{ profile: activeProfile }}
           className="hire-btn"
+          onClick={() => setMenuOpen(false)}
         >
           Hire Me
         </Link>
+
+        <div
+          className="menu-toggle"
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          ☰
+        </div>
 
         <img
           src={profileImage}

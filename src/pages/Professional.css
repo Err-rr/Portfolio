@@ -1,13 +1,13 @@
 .professional-container {
   background: #141414;
   min-height: 100vh;
-  padding: 120px clamp(16px, 5vw, 80px);
+  padding: clamp(96px, 15vh, 120px) clamp(16px, 5vw, 80px);
   color: white;
 }
 
 .professional-heading {
   font-size: clamp(1.8rem, 4vw, 3rem);
-  margin-bottom: 80px;
+  margin-bottom: clamp(48px, 10vh, 80px);
   text-align: center;
 }
 
@@ -34,7 +34,7 @@
 .timeline-item {
   display: flex;
   position: relative;
-  margin-bottom: 80px;
+  margin-bottom: clamp(48px, 10vh, 80px);
   opacity: 0;
   transform: translateY(60px);
   transition: all 0.8s ease;
@@ -53,19 +53,21 @@
   justify-content: flex-end;
 }
 
-/* ICON (RED CIRCLE, BLACK ICON) */
+/* ICON */
 .timeline-icon {
   position: absolute;
   left: 50%;
-  width: 44px;
-  height: 44px;
+  width: clamp(38px, 5vw, 44px);
+  height: clamp(38px, 5vw, 44px);
   border-radius: 50%;
   background: #e50914;
-  color: black;
-  font-size: 20px;
+  color: #fff;
+  font-size: clamp(16px, 3vw, 18px);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   transform: translateX(-50%);
   z-index: 2;
   border: 3px solid white;
@@ -75,38 +77,39 @@
 .timeline-card {
   background: #1f1f1f;
   width: min(420px, 85vw);
-  padding: 22px;
+  padding: clamp(18px, 4vw, 22px);
   border-radius: 8px;
-  border: 1px solid #e50914; /* 🔴 thin red outline */
+
+  border: 1px solid #e50914;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .timeline-item.left .timeline-card {
-  margin-right: 60px;
+  margin-right: clamp(32px, 6vw, 60px);
 }
 
 .timeline-item.right .timeline-card {
-  margin-left: 60px;
+  margin-left: clamp(32px, 6vw, 60px);
 }
 
 .timeline-date {
-  font-size: 0.85rem;
+  font-size: clamp(0.8rem, 2.5vw, 0.85rem);
   color: #b3b3b3;
 }
 
 .timeline-card h3 {
   margin-top: 6px;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
 }
 
 .timeline-card h4 {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   color: #ddd;
   margin-bottom: 8px;
 }
 
 .timeline-card .tech {
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 2.5vw, 0.9rem);
   color: #9cdcfe;
   margin-bottom: 8px;
 }
@@ -116,31 +119,35 @@
 }
 
 .timeline-card li {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
   margin-bottom: 6px;
   line-height: 1.5;
 }
 
-/* GREEN STAR AT END */
+/* END MARKER */
 .timeline-end {
   position: relative;
-  margin: 60px auto 0;
-  width: 44px;
-  height: 44px;
+  margin: clamp(40px, 8vh, 60px) auto 0;
+
+  width: clamp(38px, 5vw, 44px);
+  height: clamp(38px, 5vw, 44px);
+
   background: #00c853;
   border-radius: 50%;
-  color: black;
+  color: #000;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+
+  font-size: clamp(16px, 3vw, 18px);
   border: 3px solid white;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
   .timeline::before {
-    left: 8px;
+    left: 10px;
   }
 
   .timeline-item {
@@ -148,7 +155,7 @@
   }
 
   .timeline-icon {
-    left: 8px;
+    left: 10px;
     transform: none;
   }
 
@@ -156,46 +163,10 @@
     margin-left: 40px !important;
     margin-right: 0 !important;
   }
-}
 
-/* ICON CIRCLE */
-.timeline-icon {
-  position: absolute;
-  left: 50%;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #e50914;
-  color: #fffdfd; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateX(-50%);
-  z-index: 2;
-  border: 3px solid white;
-  font-size: 18px;
-}
-
-/* CARD */
-.timeline-card {
-  background: #1f1f1f;
-  width: min(420px, 85vw);
-  padding: 22px;
-  border-radius: 8px;
-  border: 1px solid #e50914; /* thin red outline */
-}
-
-/* GREEN STAR END */
-.timeline-end {
-  margin: 60px auto 0;
-  width: 44px;
-  height: 44px;
-  background: #00c853;
-  border-radius: 50%;
-  color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  border: 3px solid white;
+  /* FIX END MARKER POSITION */
+  .timeline-end {
+    margin-left: -8px;
+    margin-right: 0;
+  }
 }

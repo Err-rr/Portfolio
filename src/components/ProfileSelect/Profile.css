@@ -1,5 +1,5 @@
 .watching-container {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #141414;
   color: #fff;
 
@@ -7,17 +7,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  padding: clamp(24px, 6vh, 64px);
+  text-align: center;
 }
 
 .watching-title {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: 500;
-  margin-bottom: 50px;
+  margin-bottom: clamp(28px, 6vh, 50px);
 }
 
+/* PROFILE LIST */
 .profile-list {
   display: flex;
-  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(20px, 5vw, 40px);
 }
 
 /* CARD */
@@ -32,8 +38,8 @@
 
 /* IMAGE */
 .profile-card img {
-  width: 140px;
-  height: 140px;
+  width: clamp(90px, 18vw, 140px);
+  height: clamp(90px, 18vw, 140px);
   border-radius: 6px;
 
   border: 3px solid transparent;
@@ -42,12 +48,12 @@
 
 /* NAME */
 .profile-card span {
-  margin-top: 14px;
-  font-size: 1.1rem;
+  margin-top: clamp(10px, 2vh, 14px);
+  font-size: clamp(0.85rem, 2.5vw, 1.1rem);
   color: #b3b3b3;
 }
 
-/* 🖱️ MOUSE HOVER (ALL PROFILES SAME) */
+/* 🖱️ MOUSE HOVER */
 .profile-card:hover {
   transform: scale(1.1);
 }
@@ -60,7 +66,7 @@
   color: #fff;
 }
 
-/* ⌨️ KEYBOARD NAVIGATION (Netflix accurate) */
+/* ⌨️ KEYBOARD NAVIGATION */
 .profile-card:focus-visible {
   transform: scale(1.15);
   outline: none;
@@ -72,4 +78,15 @@
 
 .profile-card:focus-visible span {
   color: #fff;
+}
+
+/* MOBILE TUNING */
+@media (max-width: 480px) {
+  .profile-card:hover {
+    transform: scale(1.05);
+  }
+
+  .profile-card:focus-visible {
+    transform: scale(1.1);
+  }
 }

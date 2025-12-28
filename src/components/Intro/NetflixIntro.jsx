@@ -1,22 +1,33 @@
-import { useEffect } from "react";
-import { Howl } from "howler";
+import { useNavigate } from "react-router-dom";
+import { useRef, useState } from "react";
+import introSound from "../../assets/sounds/netflix-intro.mp3";
 import "./intro.css";
 
-const introSound = new Howl({
-  src: ["/assets/sounds/netflix-intro.mp3"],
-  volume: 0.8,
-});
+export default function NetflixIntro() {
+  const navigate = useNavigate();
+  const audioRef = useRef(null);
+  const [exiting, setExiting] = useState(false);
 
-export default function NetflixIntro({ onFinish }) {
-  useEffect(() => {
-    introSound.play();
-    const timer = setTimeout(onFinish, 4200);
-    return () => clearTimeout(timer);
-  }, []);
+  const handleClick = async () => {
+    if (exiting) return;
+
+    try {
+      await audioRef.current.play();
+    } catch (e) {}
+
+    setExiting(true);
+
+    setTimeout(() => {
+      navigate("/profiles");
+    }, 1300);
+  };
 
   return (
-    <div className="intro-container">
-      <div className="intro-text">SHIVAM&nbsp;KUMAR</div>
+    <div className="intro-screen" onClick={handleClick}>
+      <audio ref={audioRef} src={introSound} preload="auto" />
+      <h1 className={`intro-text ${exiting ? "exit" : ""}`}>
+        SHIVAM&nbsp;KUMAR
+      </h1>
     </div>
   );
 }

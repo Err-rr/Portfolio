@@ -1,41 +1,46 @@
-.intro-container {
+.intro-screen {
   position: fixed;
   inset: 0;
-  background: black;
+  background: #000;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* 🔥 VERY IMPORTANT */
+
+  cursor: pointer;
+  z-index: 9999;
 }
 
+/* BASE TEXT — SMALL & CENTERED */
 .intro-text {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 800;
-  letter-spacing: 0.25em;
   color: #e50914;
-  text-transform: uppercase;
+  font-weight: 800;
+
+  /* Netflix-like sizing */
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  letter-spacing: 0.45em;
 
   white-space: nowrap;
   text-align: center;
 
-  animation: netflixIntro 4s ease-in-out forwards;
-  transform-origin: center;
+  /* CRITICAL */
+  transform-origin: center center;
+  transform: scale(1);
+  opacity: 1;
 }
 
-@keyframes netflixIntro {
-  0% {
-    transform: scale(1.8);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
+/* EXIT ANIMATION ONLY (ZOOM OUT) */
+.intro-text.exit {
+  animation: netflixZoomOut 1.3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes netflixZoomOut {
+  from {
     transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(3.2);
     opacity: 0;
   }
 }

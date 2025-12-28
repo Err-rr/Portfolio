@@ -17,7 +17,7 @@ export default function HeroBanner({ bgImage, title, description }) {
 
         <div className="hero-buttons">
           <a
-            href="/resume.pdf"
+            href="/Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-btn play"
@@ -27,7 +27,7 @@ export default function HeroBanner({ bgImage, title, description }) {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME"
+            href="https://www.linkedin.com/in/shivam-kumar-7aa525321"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-btn info"

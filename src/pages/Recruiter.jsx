@@ -6,7 +6,7 @@ import recruiterProfile from "../assets/profiles/recruiter.png";
 
 export default function Recruiter() {
   const heroImage =
-    "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80";
+    "https://res.cloudinary.com/dm6s07nls/image/upload/v1766926534/ChatGPT_Image_Dec_28_2025_06_24_15_PM_phwau3.png";
 
   return (
     <>

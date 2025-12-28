@@ -6,7 +6,7 @@ import developerProfile from "../assets/profiles/developer.png";
 
 export default function Developer() {
   const heroImage =
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80";
+    "https://res.cloudinary.com/dm6s07nls/image/upload/v1766925651/width_1536_ig3utt.png";
 
   return (
     <>

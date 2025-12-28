@@ -11,7 +11,7 @@ const projects = [
       "Attendance is marked automatically using face recognition. Built to work seamlessly in classrooms and labs with real-time recognition.",
     tech: ["React Native", "AWS", "Face Recognition", "AI"],
     image:
-      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+      "https://res.cloudinary.com/dm6s07nls/image/upload/v1766940124/Screenshot_2025-12-28_220527_tkvcvl.png",
   },
   {
     title: "EcoShala",
@@ -19,7 +19,7 @@ const projects = [
       "A gamified environmental learning platform with real-world eco activities, AI-powered plant disease detection, Trash-to-Treasure system, and a 3D India-focused Eco Explorer.",
     tech: ["React", "JavaScript", "AI", "3D Explorer"],
     image:
-      "https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1200&q=80",
+      "https://res.cloudinary.com/dm6s07nls/image/upload/v1766939889/Screenshot_2025-09-11_211529_qnzabx.png",
   },
   {
     title: "TripXPay",
@@ -27,7 +27,7 @@ const projects = [
       "A B2B travel-fintech startup offering Travel Now Pay Later. Contributing as a core tech member building scalable, real-time financing features.",
     tech: ["FinTech", "Full Stack", "Scalable Systems"],
     image:
-      "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80",
+      "https://res.cloudinary.com/dm6s07nls/image/upload/v1766940368/Screenshot_2025-12-28_221135_nqkl1a.png",
   },
   {
     title: "Pic2Pick",
@@ -35,23 +35,23 @@ const projects = [
       "AI-powered visual product search. Upload or link an image and instantly find visually similar products using OpenAI CLIP embeddings.",
     tech: ["Python", "Streamlit", "OpenAI CLIP", "NumPy"],
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "https://res.cloudinary.com/dm6s07nls/image/upload/v1766940691/Screenshot_2025-12-28_222054_w0njna.png",
   },
   {
-    title: "LeafGuard",
+    title: "XrayBotix",
     description:
-      "A browser-based plant disease detection app using TensorFlow.js and Teachable Machine. Works with webcam or image upload — no backend required.",
+      "A browser-Xray Fracture detection Website using TensorFlow.js and Teachable Machine. Works with webcam or image upload and no backend required.",
     tech: ["TensorFlow.js", "Teachable Machine", "JavaScript"],
     image:
-      "https://images.unsplash.com/photo-1524594227084-ec4a84a1d9d9?auto=format&fit=crop&w=1200&q=80",
+      "https://res.cloudinary.com/dm6s07nls/image/upload/v1766940148/Screenshot_2025-12-28_220851_rhayd3.png",
   },
   {
     title: "BraniFy",
     description:
-      "A lightweight flashcard web app that helps users learn and retain concepts efficiently using custom decks.",
+      "A lightweight flashcard web app that helps users learn and retain concepts efficiently using custom decks. It makes Revision fun and effective.",
     tech: ["HTML", "CSS", "JavaScript"],
     image:
-      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
+      "https://res.cloudinary.com/dm6s07nls/image/upload/v1766940145/Screenshot_2025-12-28_221045_cm3vns.png",
   },
 ];
 

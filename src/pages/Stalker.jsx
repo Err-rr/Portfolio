@@ -10,7 +10,9 @@ export default function Stalker() {
 
   return (
     <>
-      <Navbar profileImage={stalkerProfile} />
+      <Navbar profileImage={stalkerProfile} 
+      activeProfile="stalker"
+      />
 
       <HeroBanner
         bgImage={heroImage}

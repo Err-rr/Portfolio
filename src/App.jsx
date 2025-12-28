@@ -9,6 +9,7 @@ import Stalker from "./pages/Stalker";
 import Professional from "./pages/Professional";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
+import HireMe from "./pages/HireMe";
 
 export default function App() {
   return (
@@ -29,6 +30,8 @@ export default function App() {
         <Route path="/professional" element={<Professional />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/hire-me" element={<HireMe />} />
+
       </Routes>
     </BrowserRouter>
   );

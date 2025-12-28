@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import "./Skills.css";
 
@@ -20,8 +21,7 @@ import {
   SiFirebase,
 } from "react-icons/si";
 
-
-import developerProfile from "../assets/profiles/developer.png";
+import { PROFILE_IMAGES } from "../assets/profiles";
 
 const skillSections = [
   {
@@ -32,7 +32,6 @@ const skillSections = [
       { icon: <SiNextdotjs />, name: "Next.js", desc: "React Meta-Framework" },
     ],
   },
-
   {
     title: "Programming & Backend",
     skills: [
@@ -42,7 +41,6 @@ const skillSections = [
       { icon: <SiStreamlit />, name: "Streamlit", desc: "ML & Data Apps" },
     ],
   },
-
   {
     title: "AI / ML & Data",
     skills: [
@@ -52,12 +50,15 @@ const skillSections = [
       { icon: <SiOpenai />, name: "FAISS", desc: "Vector Similarity Search" },
     ],
   },
-
   {
     title: "Cloud, DevOps & Deployment",
     skills: [
       { icon: <SiNetlify />, name: "Netlify", desc: "Frontend Deployment" },
-      { icon: <SiFirebase style={{ color: "#ff111dff" }} />, name: "Firebase", desc: "Auth & Realtime DB" },
+      {
+        icon: <SiFirebase style={{ color: "#ff111dff" }} />,
+        name: "Firebase",
+        desc: "Auth & Realtime DB",
+      },
       { icon: <FaGitAlt />, name: "Git & GitHub", desc: "Version Control" },
       { icon: <FaLinux />, name: "Linux", desc: "Development Environment" },
     ],
@@ -65,9 +66,17 @@ const skillSections = [
 ];
 
 export default function Skills() {
+  const location = useLocation();
+
+  const activeProfile = location.state?.profile || "developer";
+  const profileImage = PROFILE_IMAGES[activeProfile];
+
   return (
     <>
-      <Navbar profileImage={developerProfile} />
+      <Navbar
+        profileImage={profileImage}
+        activeProfile={activeProfile}
+      />
 
       <section className="skills-page">
         {skillSections.map((section, i) => (

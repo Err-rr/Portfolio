@@ -10,7 +10,9 @@ export default function Developer() {
 
   return (
     <>
-      <Navbar profileImage={developerProfile} />
+      <Navbar 
+      profileImage={developerProfile} 
+      activeProfile="developer" />
 
       <HeroBanner
         bgImage={heroImage}

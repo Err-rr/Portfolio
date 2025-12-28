@@ -1,10 +1,11 @@
 import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { FaBriefcase, FaGraduationCap, FaStar } from "react-icons/fa";
 
 import Navbar from "../components/Navbar/Navbar";
 import "./Professional.css";
 
-import developerProfile from "../assets/profiles/developer.png";
+import { PROFILE_IMAGES } from "../assets/profiles";
 
 const timelineData = [
   {
@@ -15,9 +16,9 @@ const timelineData = [
     org: "TripXpay, Hybrid",
     tech: "Next.js, Firebase, JavaScript, HTML, CSS",
     desc: [
-      " Contributing as a core tech team member.",
-      "Driving as full-stack development and CyberSec Expert to support real-time travel financing",
-      " Focused on building scalable, user-friendly features using modern web technologies.",
+      "Contributing as a core tech team member.",
+      "Driving full-stack development and CyberSec efforts.",
+      "Building scalable, user-friendly features.",
     ],
   },
   {
@@ -28,8 +29,8 @@ const timelineData = [
     org: "Outliner, Remote",
     tech: "Next.js, React, JavaScript, HTML, CSS",
     desc: [
-      "Shaping the future of interfaces by crafting UI/UX models.",
-      "Selected for this role following the success of my project in a hackathon hosted by Outliner.",
+      "Crafting UI/UX models.",
+      "Selected after hackathon success.",
     ],
   },
   {
@@ -39,8 +40,8 @@ const timelineData = [
     title: "Bachelor’s Degree",
     org: "Delhi Technological University",
     desc: [
-      " Pursuing B.Tech in Mechanical Engineering.",
-      " Won 2X Hackathons.",
+      "Pursuing B.Tech in Mechanical Engineering.",
+      "Won 2x Hackathons.",
     ],
   },
   {
@@ -49,10 +50,7 @@ const timelineData = [
     date: "Apr 2021 – Apr 2023",
     title: "Class XII",
     org: "New Modern Public School, Bihar",
-    desc: [
-      " Student Council - Headboy",
-      "Scored 88%",
-    ],
+    desc: ["Student Council - Headboy", "Scored 88%"],
   },
   {
     type: "edu",
@@ -60,15 +58,17 @@ const timelineData = [
     date: "Apr 2019 – Apr 2021",
     title: "Class X",
     org: "Vidya Vihar Residential School, Bihar",
-    desc: [
-      " QCC - Team Leader",
-      "Scored 94%",
-    ],
+    desc: ["QCC - Team Leader", "Scored 94%"],
   },
 ];
 
 export default function Professional() {
   const itemsRef = useRef([]);
+  const location = useLocation();
+
+  // 🔥 dynamic profile logic (same pattern you learned)
+  const activeProfile = location.state?.profile || "developer";
+  const profileImage = PROFILE_IMAGES[activeProfile];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -88,7 +88,10 @@ export default function Professional() {
 
   return (
     <>
-      <Navbar profileImage={developerProfile} />
+      <Navbar
+        profileImage={profileImage}
+        activeProfile={activeProfile}
+      />
 
       <section className="professional-container">
         <h1 className="professional-heading">
@@ -103,11 +106,7 @@ export default function Professional() {
               className={`timeline-item ${item.side}`}
             >
               <div className="timeline-icon">
-                {item.type === "work" ? (
-                  <FaBriefcase />
-                ) : (
-                  <FaGraduationCap />
-                )}
+                {item.type === "work" ? <FaBriefcase /> : <FaGraduationCap />}
               </div>
 
               <div className="timeline-card">
@@ -126,7 +125,6 @@ export default function Professional() {
             </div>
           ))}
 
-          {/* FINAL GREEN STAR */}
           <div className="timeline-end">
             <FaStar />
           </div>

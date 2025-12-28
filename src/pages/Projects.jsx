@@ -1,7 +1,8 @@
+import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import "./Projects.css";
 
-import developerProfile from "../assets/profiles/developer.png";
+import { PROFILE_IMAGES } from "../assets/profiles";
 
 const projects = [
   {
@@ -55,9 +56,17 @@ const projects = [
 ];
 
 export default function Projects() {
+  const location = useLocation();
+
+  const activeProfile = location.state?.profile || "developer";
+  const profileImage = PROFILE_IMAGES[activeProfile];
+
   return (
     <>
-      <Navbar profileImage={developerProfile} />
+      <Navbar
+        profileImage={profileImage}
+        activeProfile={activeProfile}
+      />
 
       <section className="projects-page">
         <h1 className="projects-title">Projects</h1>

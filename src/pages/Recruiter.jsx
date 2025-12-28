@@ -10,7 +10,8 @@ export default function Recruiter() {
 
   return (
     <>
-      <Navbar profileImage={recruiterProfile} />
+      <Navbar profileImage={recruiterProfile}  
+      activeProfile="recruiter"/>
 
       <HeroBanner
         bgImage={heroImage}

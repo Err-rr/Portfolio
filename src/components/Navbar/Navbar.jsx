@@ -1,8 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./navbar.css";
 
-export default function Navbar({ profileImage }) {
+export default function Navbar({ profileImage, activeProfile }) {
   const navigate = useNavigate();
+
+  const go = (path) => {
+    navigate(path, { state: { profile: activeProfile } });
+  };
 
   return (
     <nav className="netflix-navbar">
@@ -10,21 +14,28 @@ export default function Navbar({ profileImage }) {
         <span className="logo">SHIVAM KUMAR</span>
 
         <ul className="nav-links">
-          <li onClick={() => navigate("/")}>Home</li>
-          <li onClick={() => navigate("/professional")}>Professional</li>
-          <li onClick={() => navigate("/skills")}>Skills</li>
-          <li onClick={() => navigate("/projects")}>Projects</li>
+          <li onClick={() => go("/")}>Home</li>
+          <li onClick={() => go("/professional")}>Professional</li>
+          <li onClick={() => go("/skills")}>Skills</li>
+          <li onClick={() => go("/projects")}>Projects</li>
         </ul>
       </div>
 
       <div className="nav-right">
-        <button className="hire-btn">Hire Me</button>
+        {/* Hire Me already passes state correctly */}
+        <Link
+          to="/hire-me"
+          state={{ profile: activeProfile }}
+          className="hire-btn"
+        >
+          Hire Me
+        </Link>
 
         <img
           src={profileImage}
           alt="profile"
           className="profile-avatar"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/profiles")}
         />
       </div>
     </nav>

@@ -16,31 +16,36 @@
   color: #e50914;
   font-weight: 800;
 
-  /* Netflix-like sizing */
   font-size: clamp(2.2rem, 5vw, 3.2rem);
   letter-spacing: 0.45em;
 
   white-space: nowrap;
   text-align: center;
 
-  /* CRITICAL */
   transform-origin: center center;
   transform: scale(1);
   opacity: 1;
 }
 
-/* EXIT ANIMATION ONLY (ZOOM OUT) */
+/* EXIT ANIMATION — SLOW, CINEMATIC */
 .intro-text.exit {
-  animation: netflixZoomOut 1.3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation: netflixZoomOut 2.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 120ms; /* lets the text be FELT */
 }
 
 @keyframes netflixZoomOut {
-  from {
+  0% {
     transform: scale(1);
     opacity: 1;
   }
-  to {
-    transform: scale(3.2);
+
+  20% {
+    transform: scale(1.05); /* subtle weight before motion */
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(3.3);
     opacity: 0;
   }
 }

@@ -1,59 +1,81 @@
+
 .recommendations-page {
-  min-height: 100vh;
+  height: 100vh;              
+  overflow: hidden;           
   background: #141414;
-  color: #ffffff;
 
-  padding: 120px clamp(20px, 6vw, 90px);
+  display: flex;
+  justify-content: center;
+  align-items: center;        
+  padding: 0 20px;
 }
 
-/* Page title */
-.recommendations-page h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  margin-bottom: 32px;
-}
 
-/* Recommendation text blocks */
-.recommendations-page p {
-  max-width: 800px;
-
-  font-size: 1.05rem;
-  line-height: 1.7;
-
-  color: #e5e5e5;
-  margin-bottom: 22px;
-}
-
-/* Optional: subtle divider for sections */
-.recommendations-divider {
-  width: 60px;
-  height: 3px;
-  background: #e50914;
-  margin: 30px 0;
-  border-radius: 2px;
-}
-
-/* Optional future cards (if you add them later) */
 .recommendation-card {
-  background: #1f1f1f;
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 24px;
+  max-width: 900px;
+  width: 100%;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: radial-gradient(
+    circle at top,
+    #1c1c1c,
+    #121212
+  );
+
+  border-radius: 16px;
+  padding: 40px;
+
+  
+  border: 1px solid rgba(229, 9, 20, 0.9);
+
+ 
+  box-shadow:
+    0 0 28px rgba(229, 9, 20, 0.25),
+    inset 0 0 24px rgba(229, 9, 20, 0.04);
 }
 
-.recommendation-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
+
+.rec-header {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 26px;
 }
 
-.recommendation-card span {
-  font-size: 0.85rem;
+.rec-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e50914;
+}
+
+.rec-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e50914;
+}
+
+.rec-role {
+  font-size: 0.9rem;
   color: #b3b3b3;
+  margin-top: 2px;
 }
 
-.recommendation-card p {
-  margin-top: 12px;
-  font-size: 0.95rem;
+.rec-date {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+
+.rec-body p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #e5e5e5;
+  margin-bottom: 18px;
+}
+
+
+.rec-highlight {
+  color: #ffffff;
+  font-weight: 600;
 }

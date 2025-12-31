@@ -25,6 +25,11 @@ export const PROFILE_ROWS = {
         link: "/recommendations",
       },
       {
+        title: "Certificatios",
+        image: "/images/top-contact.jpg",
+        link: "/certifications",
+      },
+      {
         title: "Contact Me",
         image: "/images/top-contact.jpg",
         link: "/hire-me",

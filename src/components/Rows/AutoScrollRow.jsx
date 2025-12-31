@@ -8,7 +8,6 @@ export default function AutoScrollRow({ title, items = [] }) {
 
   const handleWheel = (e) => {
     if (!rowRef.current) return;
-
     e.preventDefault();
 
     rowRef.current.scrollBy({
@@ -19,7 +18,7 @@ export default function AutoScrollRow({ title, items = [] }) {
 
   return (
     <section className="row">
-      <h2>{title}</h2>
+      <h2 className="row-title">{title}</h2>
 
       <div
         className="row-posters"
@@ -30,9 +29,10 @@ export default function AutoScrollRow({ title, items = [] }) {
           <div
             key={i}
             className="poster"
+            style={{ backgroundImage: `url(${item.image})` }}
             onClick={() => navigate(item.link)}
           >
-            <img src={item.image} alt={item.title} />
+            <div className="poster-overlay" />
             <span className="poster-title">{item.title}</span>
           </div>
         ))}

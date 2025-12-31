@@ -1,49 +1,92 @@
 .row {
-  margin-left: clamp(16px, 4vw, 48px);
-  margin-top: 40px;
-  overflow-x: hidden;
+  margin-bottom: 56px;
 }
 
-.row h2 {
-  font-size: 1.2rem;
-  margin-bottom: 14px;
+/* Section title */
+.row-title {
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-left: 6px;
+  letter-spacing: 0.3px;
 }
 
-/* NETFLIX STRIP */
+/* Horizontal scroll */
 .row-posters {
   display: flex;
-  gap: 14px;
-
-  overflow-x: scroll;
-  overflow-y: hidden;
-
+  gap: 16px;
+  overflow-x: auto;
+  padding: 12px 6px 18px;
   scroll-behavior: smooth;
-  scroll-snap-type: x proximity;
-
-  padding-bottom: 24px;
-
-  scrollbar-width: none; /* Firefox */
 }
 
 .row-posters::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none;
 }
 
-/* NETFLIX CARD */
+/* POSTER CARD */
 .poster {
-  flex-shrink: 0;
+  position: relative;
+  min-width: 270px;
+  height: 155px;
 
-  width: clamp(220px, 20vw, 280px);
-  height: clamp(125px, 11vw, 160px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-  background: #2f2f2f;
-  border-radius: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
 
-  scroll-snap-align: start;
+  transform: translateZ(0);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
 
+/* Hover – Netflix lift + glow */
+.poster:hover {
+  transform: scale(1.1) translateY(-6px);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.85),
+    0 0 22px rgba(229, 9, 20, 0.25);
+  z-index: 3;
+}
+
+/* Cinematic overlay */
+.poster-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.15) 60%
+    );
+  transition: opacity 0.3s ease;
+}
+
+/* Slightly reduce overlay on hover */
+.poster:hover .poster-overlay {
+  opacity: 0.75;
+}
+
+/* Title on image */
+.poster-title {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: white;
+
+  z-index: 2;
   transition: transform 0.3s ease;
 }
 
-.poster:hover {
-  transform: scale(1.08);
+/* Title lift on hover */
+.poster:hover .poster-title {
+  transform: translateY(-4px);
 }

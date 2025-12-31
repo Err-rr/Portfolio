@@ -1,13 +1,24 @@
+import { useNavigate } from "react-router-dom";
 import "./Row.css";
 
-export default function Row({ title }) {
+export default function Row({ title, items = [] }) {
+  const navigate = useNavigate();
+
   return (
     <section className="row">
-      <h2>{title}</h2>
+      <h2 className="row-title">{title}</h2>
 
       <div className="row-posters">
-        {[...Array(10)].map((_, i) => (
-          <div key={i} className="poster" />
+        {items.map((item, i) => (
+          <div
+            key={i}
+            className="poster"
+            style={{ backgroundImage: `url(${item.image})` }}
+            onClick={() => navigate(item.link)}
+          >
+            <div className="poster-overlay" />
+            <span className="poster-title">{item.title}</span>
+          </div>
         ))}
       </div>
     </section>

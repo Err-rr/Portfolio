@@ -56,10 +56,10 @@ export default function HireMe() {
 
         <div className="hire-contact">
           <span>
-            <FaEnvelope size={18}  color= "#e50914" /> shivam@email.com
+            <FaEnvelope size={18}  color= "#e50914" /> shivaysoni3642@gmail.com
           </span>
           <span>
-            <FaPhoneAlt size={18} color= "#e50914" /> +91 XXXXXXXXXX
+            <FaPhoneAlt size={18} color= "#e50914" /> +91 9142921275
           </span>
         </div>
 

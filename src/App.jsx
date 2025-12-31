@@ -10,6 +10,7 @@ import Professional from "./pages/Professional";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import HireMe from "./pages/HireMe";
+import Recommendations from "./pages/Recommendations";
 
 export default function App() {
   return (
@@ -31,6 +32,8 @@ export default function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/hire-me" element={<HireMe />} />
+        <Route path="/recommendations" element={<Recommendations />} />
+
 
       </Routes>
     </BrowserRouter>

@@ -1,13 +1,14 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Row.css";
 
-export default function AutoScrollRow({ title }) {
+export default function AutoScrollRow({ title, items = [] }) {
   const rowRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleWheel = (e) => {
     if (!rowRef.current) return;
 
-    // Only hijack vertical scroll when hovering row
     e.preventDefault();
 
     rowRef.current.scrollBy({
@@ -25,8 +26,15 @@ export default function AutoScrollRow({ title }) {
         ref={rowRef}
         onWheel={handleWheel}
       >
-        {Array.from({ length: 12 }).map((_, i) => (
-          <div key={i} className="poster" />
+        {items.map((item, i) => (
+          <div
+            key={i}
+            className="poster"
+            onClick={() => navigate(item.link)}
+          >
+            <img src={item.image} alt={item.title} />
+            <span className="poster-title">{item.title}</span>
+          </div>
         ))}
       </div>
     </section>

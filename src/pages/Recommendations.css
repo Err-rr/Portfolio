@@ -1,0 +1,59 @@
+.recommendations-page {
+  min-height: 100vh;
+  background: #141414;
+  color: #ffffff;
+
+  padding: 120px clamp(20px, 6vw, 90px);
+}
+
+/* Page title */
+.recommendations-page h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+/* Recommendation text blocks */
+.recommendations-page p {
+  max-width: 800px;
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+
+  color: #e5e5e5;
+  margin-bottom: 22px;
+}
+
+/* Optional: subtle divider for sections */
+.recommendations-divider {
+  width: 60px;
+  height: 3px;
+  background: #e50914;
+  margin: 30px 0;
+  border-radius: 2px;
+}
+
+/* Optional future cards (if you add them later) */
+.recommendation-card {
+  background: #1f1f1f;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.recommendation-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.recommendation-card span {
+  font-size: 0.85rem;
+  color: #b3b3b3;
+}
+
+.recommendation-card p {
+  margin-top: 12px;
+  font-size: 0.95rem;
+}

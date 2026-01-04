@@ -25,8 +25,8 @@ const timelineData = [
     type: "work",
     side: "right",
     date: "May 2025 - Aug 2025",
-    title: "UI Expert",
-    org: "Outliner, Remote",
+    title: "Frontend Developer (UI/UX)",
+    org: "Outlier, Remote",
     tech: "Next.js, React, JavaScript, HTML, CSS",
     desc: [
       "Crafting UI/UX models.",

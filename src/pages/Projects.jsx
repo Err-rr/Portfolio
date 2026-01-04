@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import "./Projects.css";
 
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { PROFILE_IMAGES } from "../assets/profiles";
 
 const projects = [
@@ -9,9 +10,11 @@ const projects = [
     title: "CV-Based Attendance System",
     description:
       "Attendance is marked automatically using face recognition. Built to work seamlessly in classrooms and labs with real-time recognition.",
-    tech: ["React Native", "AWS", "Face Recognition", "AI"],
+    tech: ["React Native", "AWS", "Face Recognition"],
     image:
       "https://res.cloudinary.com/dm6s07nls/image/upload/v1766940124/Screenshot_2025-12-28_220527_tkvcvl.png",
+    liveLink: "",
+    githubLink: "https://github.com/dtu-apps-student-team/cv-attendance-app",
   },
   {
     title: "EcoShala",
@@ -20,6 +23,8 @@ const projects = [
     tech: ["React", "JavaScript", "AI", "3D Explorer"],
     image:
       "https://res.cloudinary.com/dm6s07nls/image/upload/v1766939889/Screenshot_2025-09-11_211529_qnzabx.png",
+    liveLink: "https://www.youtube.com/watch?v=qMRkwGMgb14",
+    githubLink: "https://github.com/Err-rr/EcoShala",
   },
   {
     title: "TripXPay",
@@ -28,6 +33,8 @@ const projects = [
     tech: ["FinTech", "Full Stack", "Scalable Systems"],
     image:
       "https://res.cloudinary.com/dm6s07nls/image/upload/v1766940368/Screenshot_2025-12-28_221135_nqkl1a.png",
+    liveLink: "https://www.tripxpay.in/",
+    githubLink: "",
   },
   {
     title: "Pic2Pick",
@@ -36,6 +43,8 @@ const projects = [
     tech: ["Python", "Streamlit", "OpenAI CLIP", "NumPy"],
     image:
       "https://res.cloudinary.com/dm6s07nls/image/upload/v1766940691/Screenshot_2025-12-28_222054_w0njna.png",
+    liveLink: "https://pic2pick.streamlit.app/",
+    githubLink: "https://github.com/Err-rr/Pic2Pick",
   },
   {
     title: "XrayBotix",
@@ -44,29 +53,29 @@ const projects = [
     tech: ["TensorFlow.js", "Teachable Machine", "JavaScript"],
     image:
       "https://res.cloudinary.com/dm6s07nls/image/upload/v1766940148/Screenshot_2025-12-28_220851_rhayd3.png",
+    liveLink: "https://xraybotixai.netlify.app/",
+    githubLink: "https://github.com/Err-rr/XrayBotix",
   },
   {
     title: "BraniFy",
     description:
-      "A lightweight flashcard web app that helps users learn and retain concepts efficiently using custom decks. It makes Revision fun and effective.",
+      "A lightweight flashcard web app that helps users learn and retain concepts efficiently using custom decks. It makes revision fun and effective.",
     tech: ["HTML", "CSS", "JavaScript"],
     image:
       "https://res.cloudinary.com/dm6s07nls/image/upload/v1766940145/Screenshot_2025-12-28_221045_cm3vns.png",
+    liveLink: "https://branify-01.netlify.app/",
+    githubLink: "https://github.com/Err-rr/BraniFy",
   },
 ];
 
 export default function Projects() {
   const location = useLocation();
-
   const activeProfile = location.state?.profile || "developer";
   const profileImage = PROFILE_IMAGES[activeProfile];
 
   return (
     <>
-      <Navbar
-        profileImage={profileImage}
-        activeProfile={activeProfile}
-      />
+      <Navbar profileImage={profileImage} activeProfile={activeProfile} />
 
       <section className="projects-page">
         <h1 className="projects-title">Projects</h1>
@@ -77,7 +86,35 @@ export default function Projects() {
               <img src={project.image} alt={project.title} />
 
               <div className="project-content">
-                <h2>{project.title}</h2>
+                {/* TITLE + ICONS */}
+                <div className="project-header">
+                  <h2>{project.title}</h2>
+
+                  <div className="project-links">
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="Live Project"
+                      >
+                        <FaExternalLinkAlt />
+                      </a>
+                    )}
+
+                    {project.githubLink && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="GitHub Repository"
+                      >
+                        <FaGithub />
+                      </a>
+                    )}
+                  </div>
+                </div>
+
                 <p>{project.description}</p>
 
                 <div className="tech-stack">

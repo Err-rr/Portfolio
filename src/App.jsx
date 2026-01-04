@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import NetflixIntro from "./components/Intro/NetflixIntro";
 import WhoIsWatching from "./components/ProfileSelect/WhoIsWatching";
+import ScrollToTop from "./components/ScrollToTop";
 
 import Developer from "./pages/Developer";
 import Recruiter from "./pages/Recruiter";
@@ -16,6 +17,9 @@ import Certifications from "./pages/Certifications";
 export default function App() {
   return (
     <BrowserRouter>
+      {/* ✅ GLOBAL SCROLL RESET */}
+      <ScrollToTop />
+
       <Routes>
         {/* Netflix intro ONLY on root */}
         <Route path="/" element={<NetflixIntro />} />
@@ -35,8 +39,6 @@ export default function App() {
         <Route path="/hire-me" element={<HireMe />} />
         <Route path="/recommendations" element={<Recommendations />} />
         <Route path="/certifications" element={<Certifications />} />
-
-
       </Routes>
     </BrowserRouter>
   );

@@ -13,6 +13,7 @@ import Projects from "./pages/Projects";
 import HireMe from "./pages/HireMe";
 import Recommendations from "./pages/Recommendations";
 import Certifications from "./pages/Certifications";
+import Reading from "./pages/Reading";
 
 export default function App() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/hire-me" element={<HireMe />} />
         <Route path="/recommendations" element={<Recommendations />} />
         <Route path="/certifications" element={<Certifications />} />
+        <Route path="/reading" element={<Reading />} />
       </Routes>
     </BrowserRouter>
   );

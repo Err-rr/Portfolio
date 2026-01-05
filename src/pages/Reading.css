@@ -1,0 +1,79 @@
+/* PAGE */
+.reading-page {
+  background: #141414;
+  min-height: 100vh;
+  padding: 140px 64px 80px;
+  color: white;
+}
+
+/* TITLE */
+.reading-title {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.reading-title h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+/* SECTION */
+.reading-row {
+  margin-bottom: 48px;
+}
+
+/* GRID — STRICT 4 COLUMNS */
+.reading-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* CARD — SHORTER */
+.reading-card {
+  background: #1c1c1c;
+  border-radius: 14px;
+  padding: 12px;
+  border: 1px solid rgba(229, 9, 20, 0.55);
+}
+
+/* COVER — SMALLER HEIGHT */
+.reading-cover {
+  width: 100%;
+  aspect-ratio: 3 / 3.8; /* ⬅️ SHORTER THAN BEFORE */
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 10px;
+}
+
+.reading-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* INFO — COMPACT */
+.reading-info h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.reading-info span {
+  font-size: 0.78rem;
+  color: #b3b3b3;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* DESCRIPTION — SINGLE LINE */
+.reading-info p {
+  font-size: 0.78rem;
+  color: #cfcfcf;
+  line-height: 1.35;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

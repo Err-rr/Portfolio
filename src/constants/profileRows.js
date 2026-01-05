@@ -44,10 +44,10 @@ export const PROFILE_ROWS = {
 
     continueWatching: [
       {
-        title: "EcoShala",
+        title: "Reading",
         image:
           "https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1600&q=80",
-        link: "/projects",
+        link: "/reading",
       },
       {
         title: "Pic2Pick",
@@ -94,7 +94,7 @@ export const PROFILE_ROWS = {
         title: "TripXPay",
         image:
           "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1600&q=80",
-        link: "/projects",
+        link: "/reading",
       },
     ],
   },

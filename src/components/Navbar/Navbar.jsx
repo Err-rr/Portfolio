@@ -2,13 +2,30 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Navbar.css";
 
-export default function Navbar({ profileImage, activeProfile }) {
+export default function Navbar({
+  profileImage: profileImageProp,
+  activeProfile: activeProfileProp,
+}) {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  
+  const activeProfile =
+    activeProfileProp ||
+    sessionStorage.getItem("activeProfile") ||
+    "developer";
+
+  // persist every render-safe
+  sessionStorage.setItem("activeProfile", activeProfile);
+
+  const profileImage =
+    profileImageProp ||
+    `/profiles/${activeProfile}.png`; 
+
   const go = (path) => {
+    sessionStorage.setItem("activeProfile", activeProfile);
     navigate(path, { state: { profile: activeProfile } });
-    setMenuOpen(false); // close menu on navigation (mobile)
+    setMenuOpen(false);
   };
 
   return (
@@ -47,7 +64,7 @@ export default function Navbar({ profileImage, activeProfile }) {
           src={profileImage}
           alt="profile"
           className="profile-avatar"
-          onClick={() => navigate("/profiles")}
+          onClick={() => go("/profiles")}
         />
       </div>
     </nav>

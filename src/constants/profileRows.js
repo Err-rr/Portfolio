@@ -50,10 +50,16 @@ export const PROFILE_ROWS = {
         link: "/reading",
       },
       {
-        title: "Pic2Pick",
+        title: "TripXpay Project",
         image:
-          "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
-        link: "/projects",
+          "https://res.cloudinary.com/dm6s07nls/image/upload/v1766940368/Screenshot_2025-12-28_221135_nqkl1a.png",
+        link: "/tripxpay",
+      },
+            {
+        title: "Contact Me",
+        image:
+          "https://i.pinimg.com/1200x/a3/81/92/a38192fdb7b391fdee64db9aca175e16.jpg",
+        link: "/hire-me",
       },
     ],
   },

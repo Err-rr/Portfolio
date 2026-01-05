@@ -46,7 +46,7 @@ export const PROFILE_ROWS = {
       {
         title: "Reading",
         image:
-          "https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1600&q=80",
+          "https://i.pinimg.com/1200x/0b/1f/25/0b1f2574fb06142284ebb26faa55ffc7.jpg",
         link: "/reading",
       },
       {
@@ -64,28 +64,41 @@ export const PROFILE_ROWS = {
 
     topPicks: [
       {
-        title: "Professional Timeline",
-        image:
-          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80",
-        link: "/professional",
-      },
-      {
-        title: "Skills Snapshot",
-        image:
-          "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80",
-        link: "/skills",
-      },
-      {
         title: "Projects",
         image:
-          "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1600&q=80",
+          "https://images.unsplash.com/photo-1508317469940-e3de49ba902e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         link: "/projects",
       },
-      {
-        title: "Contact",
+            {
+        title: "Skills",
         image:
-          "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80",
+          "https://i.pinimg.com/1200x/26/f4/b7/26f4b7a3308598a9b121c52dfe745964.jpg",
+        link: "/skills",
+      },
+            {
+        title: "Professional Timeline",
+        image:
+          "https://i.pinimg.com/1200x/7e/05/8d/7e058d01d8ee1303f1eeb7d92a7b3c0c.jpg",
+        link: "/professional",
+      },
+      
+      {
+        title: "Contact Me",
+        image:
+          "https://i.pinimg.com/1200x/f7/6c/1c/f76c1cc5bcb154fb0d4ed32d9e1f65bc.jpg",
         link: "/hire-me",
+      },
+      {
+        title: "Recommendations",
+        image:
+          "https://i.pinimg.com/1200x/39/d1/c1/39d1c15963e81ccc93a118f83c372767.jpg",
+        link: "/recommendations",
+      },
+      {
+        title: "Certifications",
+        image:
+          "https://i.pinimg.com/1200x/48/a5/b9/48a5b99427a8d4ea669dda26bfaaa6c5.jpg",
+        link: "/certifications",
       },
     ],
 

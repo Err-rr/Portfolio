@@ -7,37 +7,37 @@ export const PROFILE_ROWS = {
       {
         title: "Skills",
         image:
-          "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1600&q=80",
+          "https://i.pinimg.com/1200x/26/f4/b7/26f4b7a3308598a9b121c52dfe745964.jpg",
         link: "/skills",
       },
       {
         title: "Projects",
         image:
-          "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1600&q=80",
+          "https://images.unsplash.com/photo-1508317469940-e3de49ba902e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         link: "/projects",
       },
       {
         title: "Experience",
         image:
-          "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80",
+          "https://i.pinimg.com/1200x/7e/05/8d/7e058d01d8ee1303f1eeb7d92a7b3c0c.jpg",
         link: "/professional",
       },
       {
         title: "Recommendations",
         image:
-          "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80",
+          "https://i.pinimg.com/1200x/39/d1/c1/39d1c15963e81ccc93a118f83c372767.jpg",
         link: "/recommendations",
       },
       {
         title: "Certifications",
         image:
-          "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=1600&q=80",
+          "https://i.pinimg.com/1200x/48/a5/b9/48a5b99427a8d4ea669dda26bfaaa6c5.jpg",
         link: "/certifications",
       },
       {
         title: "Contact Me",
         image:
-          "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1600&q=80",
+          "https://i.pinimg.com/1200x/f7/6c/1c/f76c1cc5bcb154fb0d4ed32d9e1f65bc.jpg",
         link: "/hire-me",
       },
     ],

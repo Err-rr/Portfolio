@@ -39,18 +39,16 @@ export default function Reading() {
 
             {/* 👇 DESCRIPTION BELOW IMAGE */}
             <p className="project-image-description">
-              A preview of the TripXpay platform showcasing real-time travel
-              payment workflows, agency-focused dashboards, and scalable
-              transaction handling built for B2B travel operations.
+              EcoShala is a gamified environmental learning platform designed to make sustainability engaging, interactive, and action-driven for students across India.
             </p>
           </div>
 
           {/* RIGHT – DETAILS */}
           <div className="project-content red-box">
             <div className="project-header">
-              <h1>TripXpay</h1>
+              <h1>EcoShala</h1>
               <a
-                href="https://tripxpay.in"
+                href="https://www.youtube.com/watch?v=qMRkwGMgb14"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="live-link"
@@ -60,30 +58,24 @@ export default function Reading() {
             </div>
 
             <p className="project-tagline">
-              One platform, everything you need for travel payments.
+             One platform where sustainability meets gamified learning.
             </p>
 
             <div className="project-description">
               <p>
-                TripXpay is a B2B travel-fintech platform designed to simplify and
-                streamline travel payments for agencies across India. It enables
-                real-time booking, flexible credit workflows, and scalable
-                payment infrastructure.
+               The platform includes eco-quests, plant health detection using AI, waste-to-repurpose tools, scoring systems, badges, and interactive activities that encourage real-world eco-friendly actions.
               </p>
-
+               
               <p>
-                I contributed as a core full-stack developer, working across
-                frontend architecture, backend APIs, and secure payment flows,
-                ensuring reliability at scale.
+                I designed and developed the core platform experience, implementing gamification logic, AI-powered features, activity tracking, and a scalable frontend–backend architecture to support learning at scale.
               </p>
             </div>
 
             <div className="project-tech">
-              <span>Next.js</span>
-              <span>Node.js</span>
-              <span>Firebase</span>
-              <span>Payments</span>
-              <span>Scalable Systems</span>
+              <span>React</span>
+              <span>JavaScript</span>
+              <span>CSS</span>
+              <span>Html</span>
             </div>
           </div>
 

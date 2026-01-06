@@ -44,9 +44,15 @@ export const PROFILE_ROWS = {
 
     continueWatching: [
       {
+        title: "EcoShala Project",
+        image:
+          "https://res.cloudinary.com/dm6s07nls/image/upload/v1766939889/Screenshot_2025-09-11_211529_qnzabx.png",
+        link: "/ecoshala",
+      },
+      {
         title: "Reading",
         image:
-          "https://i.pinimg.com/1200x/0b/1f/25/0b1f2574fb06142284ebb26faa55ffc7.jpg",
+          "https://i.pinimg.com/736x/e6/86/8b/e6868b3f00cd3009a30c2feecc1aa4ee.jpg",
         link: "/reading",
       },
       {
@@ -55,10 +61,10 @@ export const PROFILE_ROWS = {
           "https://res.cloudinary.com/dm6s07nls/image/upload/v1766940368/Screenshot_2025-12-28_221135_nqkl1a.png",
         link: "/tripxpay",
       },
-            {
+      {
         title: "Contact Me",
         image:
-          "https://i.pinimg.com/1200x/a3/81/92/a38192fdb7b391fdee64db9aca175e16.jpg",
+          "https://i.pinimg.com/1200x/4f/b0/04/4fb004a70775904ecbd46e553a48e198.jpg",
         link: "/hire-me",
       },
     ],
@@ -112,8 +118,20 @@ export const PROFILE_ROWS = {
       {
         title: "EcoShala Project",
         image:
-          "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1600&q=80",
+          "https://res.cloudinary.com/dm6s07nls/image/upload/v1766939889/Screenshot_2025-09-11_211529_qnzabx.png",
         link: "/ecoshala",
+      },
+      {
+        title: "TripXpay Project",
+        image:
+          "https://res.cloudinary.com/dm6s07nls/image/upload/v1766940368/Screenshot_2025-12-28_221135_nqkl1a.png",
+        link: "/tripxpay",
+      },
+      {
+        title: "Contact Me",
+        image:
+          "https://i.pinimg.com/1200x/e5/11/a1/e511a12e3d765141b78028da92b34380.jpg",
+        link: "/hire-me",
       },
     ],
   },

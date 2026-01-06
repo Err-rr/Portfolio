@@ -100,19 +100,13 @@ const sections = [
         title: "You Can Win",
         author: "Shiv Khera",
         desc: "Success through self-belief.",
-        cover: "https://covers.openlibrary.org/b/isbn/9789382951715-L.jpg",
+        cover: "https://i.pinimg.com/736x/9f/ad/82/9fad8214574d18eaf2286c3e27c3ea28.jpg",
       },
       {
         title: "Chanakya Neeti",
         author: "Chanakya",
         desc: "Ancient wisdom for life.",
-        cover: "https://covers.openlibrary.org/b/isbn/9789354403481-L.jpg",
-      },
-      {
-        title: "Amma Diarylo Konni Pageelu",
-        author: "Yandamoori Veerendranath",
-        desc: "Reflections on values.",
-        cover: "https://covers.openlibrary.org/b/isbn/9788193871114-L.jpg",
+        cover: "https://i.pinimg.com/736x/34/c1/3f/34c13f58163eaaa44046054669bc899c.jpg",
       },
     ],
   },
@@ -121,7 +115,6 @@ const sections = [
 export default function Reading() {
   const location = useLocation();
 
-  // 🔥 FINAL PROFILE RESOLUTION (THIS WORKS)
   const activeProfile =
     location.state?.profile ||
     sessionStorage.getItem("activeProfile") ||

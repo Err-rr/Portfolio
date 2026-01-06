@@ -14,7 +14,8 @@ import HireMe from "./pages/HireMe";
 import Recommendations from "./pages/Recommendations";
 import Certifications from "./pages/Certifications";
 import Reading from "./pages/Reading";
-import TripXpay from "./pages/tripxpay";
+import TripXpay from "./pages/TripXpay";
+import Ecoshala from "./pages/Ecoshala";
 
 export default function App() {
   return (
@@ -43,6 +44,7 @@ export default function App() {
         <Route path="/certifications" element={<Certifications />} />
         <Route path="/reading" element={<Reading />} />
         <Route path="/tripxpay" element={<TripXpay />} />
+        <Route path="/ecoshala" element={<Ecoshala />} />
       </Routes>
     </BrowserRouter>
   );

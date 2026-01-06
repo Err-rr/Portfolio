@@ -27,22 +27,21 @@ export default function Reading() {
           {/* LEFT – IMAGE + DESCRIPTION */}
           <div className="project-image red-box">
             <a
-              href="https://www.tripxpay.in/"
+              href="https://www.youtube.com/watch?v=qMRkwGMgb14"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                src="https://res.cloudinary.com/dm6s07nls/image/upload/v1766940368/Screenshot_2025-12-28_221135_nqkl1a.png"
+                src="https://res.cloudinary.com/dm6s07nls/image/upload/v1766939889/Screenshot_2025-09-11_211529_qnzabx.png"
                 alt="TripXpay preview"
               />
             </a>
 
             {/* 👇 DESCRIPTION BELOW IMAGE */}
             <p className="project-image-description">
-              TripXpay is a B2B travel-fintech platform designed to simplify and
-              streamline travel payments for agencies across India. It enables
-              real-time booking, flexible credit workflows, and scalable
-              payment infrastructure.
+              A preview of the TripXpay platform showcasing real-time travel
+              payment workflows, agency-focused dashboards, and scalable
+              transaction handling built for B2B travel operations.
             </p>
           </div>
 
@@ -66,13 +65,16 @@ export default function Reading() {
 
             <div className="project-description">
               <p>
-              I contributed as a core full-stack developer, working across
-                frontend architecture, backend APIs, and secure payment flows,
-                ensuring reliability at scale.
+                TripXpay is a B2B travel-fintech platform designed to simplify and
+                streamline travel payments for agencies across India. It enables
+                real-time booking, flexible credit workflows, and scalable
+                payment infrastructure.
               </p>
 
               <p>
-                Alongside development, I also handled cybersecurity reviews by identifying and fixing vulnerabilities to ensure secure and reliable financial operations
+                I contributed as a core full-stack developer, working across
+                frontend architecture, backend APIs, and secure payment flows,
+                ensuring reliability at scale.
               </p>
             </div>
 

@@ -1,21 +1,34 @@
+/* =========================
+   PAGE
+========================= */
 .project-detail-page {
-  min-height: 100vh;
+  height: 100vh;               /* 🔒 exact viewport */
   padding: 120px clamp(16px, 5vw, 80px);
   background: #0f0f0f;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  overflow: hidden;            /* 🔒 no page scroll */
 }
 
+/* =========================
+   CARD
+========================= */
 .project-detail-card {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 48px;
+
   width: 100%;
   max-width: 1200px;
+  max-height: calc(100vh - 180px); /* 🔒 fits screen */
+
   padding: 40px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 18px;
+
   background: radial-gradient(
     circle at top,
     rgba(255, 255, 255, 0.04),
@@ -23,20 +36,44 @@
   );
 }
 
-.project-image img {
-  width: 100%;
+/* =========================
+   LEFT COLUMN
+========================= */
+.project-image {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
   height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
 }
 
+/* IMAGE — NO CROP */
+.project-image img {
+  width: 100%;
+  max-height: 260px;          /* 🔥 controlled size */
+  object-fit: contain;        /* 🔥 no cropping */
+
+  border-radius: 12px;
+  background: #000;
+}
+
+/* DESCRIPTION BELOW IMAGE */
+.project-image-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d0d0d0;
+}
+
+/* =========================
+   RIGHT COLUMN
+========================= */
 .project-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+/* HEADER */
 .project-header {
   display: flex;
   align-items: center;
@@ -44,7 +81,7 @@
 }
 
 .project-header h1 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: #ffffff;
 }
@@ -55,25 +92,24 @@
   font-size: 1.1rem;
 }
 
+/* TAGLINE */
 .project-tagline {
   margin-top: 8px;
   font-size: 1rem;
   color: #bdbdbd;
 }
 
+/* DESCRIPTION */
 .project-description {
-  margin-top: 24px;
-  font-size: 1rem;
-  line-height: 1.7;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: #e0e0e0;
 }
 
-.project-description p + p {
-  margin-top: 14px;
-}
-
+/* TECH STACK */
 .project-tech {
-  margin-top: 28px;
+  margin-top: 24px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -83,14 +119,27 @@
   padding: 6px 14px;
   border-radius: 999px;
   font-size: 0.85rem;
+
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* Responsive */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 900px) {
+  .project-detail-page {
+    height: auto;
+    overflow: visible;
+  }
+
   .project-detail-card {
     grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .project-image img {
+    max-height: 220px;
   }
 }

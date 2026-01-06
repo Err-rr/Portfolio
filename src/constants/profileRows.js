@@ -110,10 +110,10 @@ export const PROFILE_ROWS = {
 
     continueWatching: [
       {
-        title: "TripXPay",
+        title: "EcoShala Project",
         image:
           "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1600&q=80",
-        link: "/reading",
+        link: "/ecoshala",
       },
     ],
   },

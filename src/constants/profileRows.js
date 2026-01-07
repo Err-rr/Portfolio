@@ -145,7 +145,7 @@ export const PROFILE_ROWS = {
         title: "Who Is Shivam?",
         image:
           "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
-        link: "/professional",
+        link: "/whoisshivam",
       },
       {
         title: "Projects at 2 AM",

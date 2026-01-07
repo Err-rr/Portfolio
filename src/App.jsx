@@ -16,6 +16,7 @@ import Certifications from "./pages/Certifications";
 import Reading from "./pages/Reading";
 import TripXpay from "./pages/TripXpay";
 import Ecoshala from "./pages/Ecoshala";
+import WhoIsShivam from "./pages/WhoIsShivam";
 
 export default function App() {
   return (
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="/reading" element={<Reading />} />
         <Route path="/tripxpay" element={<TripXpay />} />
         <Route path="/ecoshala" element={<Ecoshala />} />
+        <Route path="/whoisshivam" element={<WhoIsShivam />} />
       </Routes>
     </BrowserRouter>
   );

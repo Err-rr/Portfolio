@@ -150,13 +150,13 @@ export const PROFILE_ROWS = {
       {
         title: "Projects at 2 AM",
         image:
-          "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1600&q=80",
+          "https://i.pinimg.com/736x/62/30/c4/6230c4738a21965a638e315844c172c7.jpg",
         link: "/projects",
       },
       {
         title: "Contact?",
         image:
-          "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80",
+          "https://i.pinimg.com/1200x/ad/af/90/adaf90b9041a180e39452a9d4459c790.jpg",
         link: "/hire-me",
       },
     ],

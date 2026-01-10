@@ -150,7 +150,7 @@ export const PROFILE_ROWS = {
       {
         title: "Projects at 2 AM",
         image:
-          "https://i.pinimg.com/736x/62/30/c4/6230c4738a21965a638e315844c172c7.jpg",
+          "https://i.pinimg.com/1200x/f2/9f/7a/f29f7af6b35e675f2902acd33c7c6e17.jpg",
         link: "/projects",
       },
       {

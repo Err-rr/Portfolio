@@ -156,7 +156,7 @@ export const PROFILE_ROWS = {
       {
         title: "Contact?",
         image:
-          "https://i.pinimg.com/1200x/ad/af/90/adaf90b9041a180e39452a9d4459c790.jpg",
+          "https://i.pinimg.com/1200x/5d/4c/cf/5d4ccf1e420b6111429f7526ea2369ec.jpg",
         link: "/hire-me",
       },
     ],

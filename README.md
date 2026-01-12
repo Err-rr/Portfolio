@@ -1,32 +1,65 @@
 # 🎬 Netflix-Style Developer Portfolio
 
-A Netflix-inspired personal portfolio designed to showcase my projects, skills, and journey as a developer in an immersive, cinematic way.
+A **Netflix-inspired developer portfolio** that showcases projects, skills, and personal journey through an immersive, cinematic UI.
 
-> 🚧 **Work Under Construction**  
-> This portfolio is actively being built and refined. New sections, interactions, and visual upgrades are continuously being added.
+> 🚧 **Work in Progress**  
+> This portfolio is actively evolving. New sections, animations, and interactions are added regularly.
 
 ---
 
 ## ✨ Concept
 
-This portfolio reimagines a traditional developer portfolio using a Netflix-like UI and experience:
-- Intro animation inspired by Netflix
-- Profile-based entry experience
-- Cinematic hero sections
-- Project rows instead of movie rows
-- Dark, minimal, premium aesthetic
+This project reimagines a traditional portfolio with a Netflix-like experience:
+- Cinematic intro animation  
+- Profile-based entry flow  
+- Hero banners with dark premium aesthetics  
+- Projects displayed as Netflix-style rows  
+- Smooth transitions and interactions  
 
 ---
 
-## 🧩 Features (In Progress)
+## 🧩 Features
 
 - 🎥 Netflix-style intro & transitions  
 - 👤 Profile-based entry (Developer / Recruiter / Visitor)  
-- 📂 Project showcase as interactive rows  
+- 📂 Interactive project rows  
 - 🧠 Skills & tech stack sections  
 - 🎨 Cinematic hero banners  
-- ⌨️ Keyboard navigation & smooth animations  
+- ⌨️ Smooth animations & keyboard navigation  
 
+---
+
+## 🛠️ Tech Stack
+
+- React  
+- Vite  
+- JavaScript  
+- CSS / Tailwind CSS  
+- Netlify (Deployment)
+
+---
+
+## 🚀 Live Preview
+
+🔗 **Live Portfolio**  
+https://shivamportf0li0.netlify.app/
+
+---
+
+## 📌 Project Status
+
+- UI & core structure: 🟡 In Progress  
+- Animations & interactions: 🟡 In Progress  
+- Content & polish: 🟡 In Progress  
+
+Frequent updates expected.
+
+---
+
+## 📬 Feedback
+
+Suggestions and feedback are always welcome.  
+This project is built with a strong focus on **learning, experimentation, and creative UI design**.
 ---
 
 ## 🛠️ Tech Stack

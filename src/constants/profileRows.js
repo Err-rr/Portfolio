@@ -162,6 +162,12 @@ export const PROFILE_ROWS = {
     ],
 
     continueWatching: [
+       {
+        title: "Reading",
+        image:
+          "https://i.pinimg.com/736x/e6/86/8b/e6868b3f00cd3009a30c2feecc1aa4ee.jpg",
+        link: "/reading",
+      },
       {
         title: "Hidden Details",
         image:

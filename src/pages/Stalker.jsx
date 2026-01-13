@@ -7,7 +7,7 @@ import { PROFILE_ROWS } from "../constants/profileRows";
 
 export default function Stalker() {
   const heroImage =
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80";
+    "https://i.pinimg.com/1200x/18/05/e6/1805e681830f8b727637b176c7057e83.jpg";
 
   const rows = PROFILE_ROWS.stalker;
 

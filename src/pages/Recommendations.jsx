@@ -13,7 +13,7 @@ export default function Recommendations() {
           {/* Header */}
           <div className="rec-header">
             <img
-              src="https://i.pravatar.cc/150?img=32"
+              src="https://img.pikbest.com/png-images/20241231/simple-black-and-white-female-avatar-icon_11326880.png!sw800"
               alt="Emily T."
               className="rec-avatar"
             />

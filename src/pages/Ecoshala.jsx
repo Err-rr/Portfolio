@@ -33,13 +33,12 @@ export default function Reading() {
             >
               <img
                 src="https://res.cloudinary.com/dm6s07nls/image/upload/v1766939889/Screenshot_2025-09-11_211529_qnzabx.png"
-                alt="TripXpay preview"
+                alt="EcoShala preview"
               />
             </a>
 
-            {/* 👇 DESCRIPTION BELOW IMAGE */}
             <p className="project-image-description">
-              EcoShala is a gamified environmental learning platform designed to make sustainability engaging, interactive, and action-driven for students across India.
+              EcoShala is a full-stack gamified learning platform that promotes environmental awareness through AI-assisted learning, real-world sustainability challenges, and interactive student engagement.
             </p>
           </div>
 
@@ -58,24 +57,24 @@ export default function Reading() {
             </div>
 
             <p className="project-tagline">
-             One platform where sustainability meets gamified learning.
+              A scalable platform where sustainability meets gamified learning.
             </p>
 
             <div className="project-description">
               <p>
-               The platform includes eco-quests, plant health detection using AI, waste-to-repurpose tools, scoring systems, badges, and interactive activities that encourage real-world eco-friendly actions.
+                Built a full-stack platform featuring authentication, leaderboards, adaptive quizzes, AI-powered plant disease detection, waste-to-treasure recommendations, and immersive environmental learning experiences.
               </p>
-               
+
               <p>
-                I designed and developed the core platform experience, implementing gamification logic, AI-powered features, activity tracking, and a scalable frontend–backend architecture to support learning at scale.
+                Engineered the application using React and Firebase, integrating Gemini-powered learning assistance, real-time activity tracking, reward systems, and scalable data models for student engagement.
               </p>
             </div>
 
             <div className="project-tech">
               <span>React</span>
+              <span>Firebase</span>
               <span>JavaScript</span>
-              <span>CSS</span>
-              <span>Html</span>
+              <span>Gemini API</span>
             </div>
           </div>
 

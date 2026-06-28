@@ -37,19 +37,16 @@ export default function Reading() {
               />
             </a>
 
-            {/* 👇 DESCRIPTION BELOW IMAGE */}
+            {/* DESCRIPTION BELOW IMAGE */}
             <p className="project-image-description">
-              TripXpay is a B2B travel-fintech platform designed to simplify and
-              streamline travel payments for agencies across India. It enables
-              real-time booking, flexible credit workflows, and scalable
-              payment infrastructure.
+              TripXPay is a B2B travel-fintech platform that streamlines travel financing through real-time booking, flexible credit workflows, and secure payment infrastructure for travel agencies.
             </p>
           </div>
 
           {/* RIGHT – DETAILS */}
           <div className="project-content red-box">
             <div className="project-header">
-              <h1>TripXpay</h1>
+              <h1>TripXPay</h1>
               <a
                 href="https://tripxpay.in"
                 target="_blank"
@@ -61,27 +58,25 @@ export default function Reading() {
             </div>
 
             <p className="project-tagline">
-              One platform, everything you need for travel payments.
+              Building scalable technology for modern travel financing.
             </p>
 
             <div className="project-description">
               <p>
-              I contributed as a core full-stack developer, working across
-                frontend architecture, backend APIs, and secure payment flows,
-                ensuring reliability at scale.
+                Developed production-ready full-stack features using Next.js and Firebase, implementing e-KYC workflows, secure credit transactions, and backend services for reliable financial operations.
               </p>
 
               <p>
-                Alongside development, I also handled cybersecurity reviews by identifying and fixing vulnerabilities to ensure secure and reliable financial operations
+                Migrated the platform from React to Next.js with server-side rendering, improving SEO, application performance, and core user and admin workflows while resolving production-level issues.
               </p>
             </div>
 
             <div className="project-tech">
               <span>Next.js</span>
-              <span>Node.js</span>
               <span>Firebase</span>
-              <span>Payments</span>
-              <span>Scalable Systems</span>
+              <span>JavaScript</span>
+              <span>REST APIs</span>
+              <span>FinTech</span>
             </div>
           </div>
 

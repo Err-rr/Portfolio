@@ -44,7 +44,7 @@ export default function HireMe() {
               View LinkedIn
             </a>
 
-            <a href="/Resume.pdf" className="hire-btn secondary" target="_blank">
+            <a href="/ShivamKumarRes.pdf" className="hire-btn secondary" target="_blank">
               View Resume
             </a>
           </div>

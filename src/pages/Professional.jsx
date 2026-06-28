@@ -7,60 +7,90 @@ import "./Professional.css";
 
 import { PROFILE_IMAGES } from "../assets/profiles";
 
+
 const timelineData = [
   {
     type: "work",
     side: "left",
-    date: "May 2025 - present",
-    title: "Full stack Developer",
-    org: "TripXpay, Hybrid",
-    tech: "Next.js, Firebase, JavaScript, HTML, CSS",
+    date: "Jun 2026 - Present",
+    title: "Full Stack Developer",
+    org: "FocusDesk, Remote",
+    tech: "Node.js • PostgreSQL • REST APIs • Redis",
     desc: [
-      "Contributing as a core tech team member.",
-      "Driving full-stack development and CyberSec efforts.",
-      "Building scalable, user-friendly features.",
+      "Developing backend for authentication, session orchestration, and platform workflows.",
+      "Integrated Redis caching to reduce API latency by 30% while improving throughput.",
+      "Designing scalable backend systems focused on reliability and performance.",
     ],
   },
+
   {
     type: "work",
     side: "right",
-    date: "May 2025 - Aug 2025",
-    title: "Frontend Developer (UI/UX)",
-    org: "Outlier, Remote",
-    tech: "Next.js, React, JavaScript, HTML, CSS",
+    date: "May 2025 - Sep 2025",
+    title: "Full Stack Developer",
+    org: "TripXPay, Hybrid",
+    tech: "Next.js • Firebase • Node.js • REST APIs",
     desc: [
-      "Crafting UI/UX models.",
-      "Selected after hackathon success.",
+      "Built production-ready features for a B2B travel-fintech platform.",
+      "Developed backend services supporting e-KYC workflows and secure credit transactions.",
+      "Migrated React to Next.js with SSR while improving SEO and application performance.",
     ],
   },
+
   {
-    type: "edu",
-    side: "left",
-    date: "Aug 2024 – Present",
-    title: "Bachelor’s Degree",
-    org: "Delhi Technological University",
-    desc: [
-      "Pursuing B.Tech in Mechanical Engineering.",
-      "Won 2x Hackathons.",
+   type: "work",
+   side: "left",
+   date: "May 2025 - Aug 2025",
+   title: "AI Frontend Trainer",
+   org: "Outlier, Remote",
+   tech: "React • Next.js • JavaScript • Prompt Engineering",
+   desc: [
+      "Contributed to training AI models for generating modern, responsive frontend interfaces.",
+      "Evaluated model outputs, refined prompts, and improved adherence to production-grade UI.",
+      "Provided feedback to enhance model accuracy, design consistency, and overall user experience.",
     ],
   },
+
   {
     type: "edu",
     side: "right",
-    date: "Apr 2021 – Apr 2023",
-    title: "Class XII",
-    org: "New Modern Public School, Bihar",
-    desc: ["Student Council - Headboy", "Scored 88%"],
+    date: "Aug 2024 - Present",
+    title: "Bachelor of Technology",
+    org: "Delhi Technological University (DTU)",
+    desc: [
+      "B.Tech in Mechanical Engineering",
+      "CGPA: 8.25",
+      "Active in software engineering, cybersecurity, and AI projects.",
+    ],
   },
+
   {
     type: "edu",
     side: "left",
-    date: "Apr 2019 – Apr 2021",
-    title: "Class X",
+    date: "Apr 2021 - Apr 2023",
+    title: "Senior Secondary (Class XII)",
+    org: "New Modern Public School, Bihar",
+    desc: [
+      "CBSE Board",
+      "Scored 88%",
+      "Served as School Head Boy.",
+    ],
+  },
+
+  {
+    type: "edu",
+    side: "right",
+    date: "Apr 2019 - Apr 2021",
+    title: "Secondary (Class X)",
     org: "Vidya Vihar Residential School, Bihar",
-    desc: ["QCC - Team Leader", "Scored 94%"],
+    desc: [
+      "CBSE Board",
+      "Scored 94%",
+      "Led Quality Control Circle (QCC) team activities.",
+    ],
   },
 ];
+
 
 export default function Professional() {
   const itemsRef = useRef([]);
@@ -95,7 +125,7 @@ export default function Professional() {
 
       <section className="professional-container">
         <h1 className="professional-heading">
-          Work Experience & Education Timeline
+          Experience & Education
         </h1>
 
         <div className="timeline">

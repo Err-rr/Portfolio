@@ -169,7 +169,7 @@ export const PROFILE_ROWS = {
         link: "/reading",
       },
       {
-        title: "Hidden Details",
+        title: "Do Not Open",
         image:
           "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1600&q=80",
         link: "/stalker",

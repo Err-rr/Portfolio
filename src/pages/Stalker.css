@@ -248,7 +248,7 @@
 .meltdown-warning {
   margin: 0;
   font-family: Inter, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
-  font-size: clamp(1.55rem, 4.3vw, 2.35rem);
+  font-size: clamp(1.05rem, 2.8vw, 1.5rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1.1;

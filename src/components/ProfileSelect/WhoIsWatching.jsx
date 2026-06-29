@@ -12,7 +12,7 @@ const profiles = [
 ];
 
 export default function WhoIsWatching() {
-  const [activeIndex, setActiveIndex] = useState(null); // 👈 IMPORTANT
+  const [activeIndex, setActiveIndex] = useState(null);
   const [hasInteracted, setHasInteracted] = useState(false);
   const cardRefs = useRef([]);
 

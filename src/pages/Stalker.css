@@ -1,154 +1,500 @@
 .stalker-meltdown-lock {
   overflow: hidden;
+  cursor: not-allowed;
 }
 
 .stalker-page {
+  --meltdown-vignette: 0;
   position: relative;
   min-height: 100vh;
-  background: #050505;
+  background: #141414;
   overflow-x: clip;
+  isolation: isolate;
+}
+
+.stalker-page:not(.meltdown-idle) {
+  background:
+    radial-gradient(circle at 50% 10%, rgba(140, 10, 20, 0.08), transparent 34%),
+    #050505;
 }
 
 .stalker-page-shell {
   position: relative;
   z-index: 1;
+  transform-origin: center top;
+  will-change: transform, filter, opacity;
 }
 
-.stalker-page.meltdown-active .stalker-page-shell {
-  animation: stalker-page-shake 3.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+.meltdown-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
   pointer-events: none;
-  user-select: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at center, transparent 48%, rgba(120, 0, 0, 0.08) 72%, rgba(0, 0, 0, 0.72) 100%);
+  transition: opacity 0.35s ease;
 }
 
-.stalker-page.meltdown-active .poster:hover,
-.stalker-page.meltdown-active .hero-btn:hover,
-.stalker-page.meltdown-active .nav-links li:hover {
-  transform: none;
-  box-shadow: none;
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .meltdown-vignette {
+  opacity: var(--meltdown-vignette);
 }
 
-.stalker-page.meltdown-active .poster,
-.stalker-page.meltdown-active .hero-btn,
-.stalker-page.meltdown-active .nav-links li,
-.stalker-page.meltdown-active .logo,
-.stalker-page.meltdown-active .profile-avatar,
-.stalker-page.meltdown-active .hire-btn,
-.stalker-page.meltdown-active .menu-toggle {
-  cursor: default;
+.stalker-page.meltdown-warning {
+  --meltdown-vignette: 0.45;
 }
 
+.stalker-page.meltdown-structural {
+  --meltdown-vignette: 0.68;
+}
+
+.stalker-page.meltdown-collapse,
+.stalker-page.meltdown-aftermath,
+.stalker-page.meltdown-complete {
+  --meltdown-vignette: 0.82;
+}
+
+.stalker-page.meltdown-warning .stalker-page-shell {
+  animation: stalker-camera-warning 1.5s linear forwards;
+}
+
+.stalker-page.meltdown-structural .stalker-page-shell {
+  animation: stalker-camera-structural 1.5s linear forwards;
+}
+
+.stalker-page.meltdown-collapse .stalker-page-shell {
+  animation: stalker-collapse-fade 2s ease forwards;
+}
+
+.stalker-page.meltdown-aftermath .stalker-page-shell,
 .stalker-page.meltdown-complete .stalker-page-shell {
   opacity: 0;
   pointer-events: none;
 }
 
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .stalker-page-shell,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .netflix-navbar,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .hero,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .hero-content,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .hero-title,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .hero-desc,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .hero-buttons,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .hero-btn,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .row,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .row-title,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .poster,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .poster-title,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .poster-overlay,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .nav-links li,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .logo,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .profile-avatar,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .hire-btn,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .menu-toggle {
+  pointer-events: none;
+  user-select: none;
+  cursor: not-allowed;
+}
+
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .poster:hover,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .hero-btn:hover,
+.stalker-page:not(.meltdown-idle)[class*="meltdown-"] .nav-links li:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.stalker-page.meltdown-warning .hero {
+  animation: stalker-hero-glitch 0.34s steps(2, end) infinite;
+}
+
+.stalker-page.meltdown-warning .netflix-navbar {
+  animation: stalker-navbar-jitter 0.22s steps(2, end) infinite;
+}
+
+.stalker-page.meltdown-warning .hero-title,
+.stalker-page.meltdown-warning .hero-desc,
+.stalker-page.meltdown-warning .row-title,
+.stalker-page.meltdown-warning .poster,
+.stalker-page.meltdown-warning .hero-btn,
+.stalker-page.meltdown-warning .nav-links li,
+.stalker-page.meltdown-warning .logo,
+.stalker-page.meltdown-warning .profile-avatar {
+  animation: stalker-vibrate-soft 0.18s linear infinite;
+}
+
+.stalker-page.meltdown-structural .netflix-navbar {
+  animation: stalker-shake-navbar 0.11s linear infinite;
+}
+
+.stalker-page.meltdown-structural .hero {
+  animation: stalker-shake-hero 0.13s linear infinite;
+}
+
+.stalker-page.meltdown-structural .hero-title,
+.stalker-page.meltdown-structural .hero-desc,
+.stalker-page.meltdown-structural .hero-buttons,
+.stalker-page.meltdown-structural .hero-btn {
+  animation: stalker-shake-text 0.12s linear infinite;
+}
+
+.stalker-page.meltdown-structural .row-title {
+  animation: stalker-shake-title 0.13s linear infinite;
+}
+
+.stalker-page.meltdown-structural .poster,
+.stalker-page.meltdown-structural .poster-title {
+  animation: stalker-shake-card 0.11s linear infinite;
+}
+
+.stalker-page.meltdown-structural .logo,
+.stalker-page.meltdown-structural .profile-avatar,
+.stalker-page.meltdown-structural .hire-btn,
+.stalker-page.meltdown-structural .nav-links li,
+.stalker-page.meltdown-structural .menu-toggle {
+  animation: stalker-vibrate-hard 0.1s linear infinite;
+}
+
 .meltdown-fragment {
   will-change: transform, opacity, filter;
   transform-origin: center center;
-  animation: stalker-fragment-fall var(--meltdown-duration, 2.7s)
-    cubic-bezier(0.2, 0.75, 0.2, 1) var(--meltdown-delay, 0s) forwards;
+}
+
+.stalker-page.meltdown-collapse .meltdown-fragment {
+  animation: stalker-fragment-fall var(--meltdown-duration, 2s)
+    cubic-bezier(0.22, 0.74, 0.25, 1) var(--meltdown-delay, 0s) forwards;
+}
+
+.meltdown-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center, rgba(18, 18, 18, 0.08), rgba(0, 0, 0, 0.9) 76%),
+    linear-gradient(180deg, rgba(6, 6, 6, 0.2), rgba(0, 0, 0, 0.9));
+  animation: meltdown-atmosphere-enter 0.8s ease forwards;
+}
+
+.dust {
+  position: absolute;
+  width: clamp(0.35rem, 0.8vw, 0.65rem);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  filter: blur(1px);
+  opacity: 0;
+  animation: dust-drift linear infinite;
+}
+
+.dust-1 {
+  top: 14%;
+  left: 20%;
+  animation-duration: 7s;
+}
+
+.dust-2 {
+  top: 28%;
+  left: 72%;
+  animation-duration: 8.4s;
+  animation-delay: -2s;
+}
+
+.dust-3 {
+  top: 50%;
+  left: 36%;
+  animation-duration: 9s;
+  animation-delay: -3.4s;
+}
+
+.dust-4 {
+  top: 64%;
+  left: 82%;
+  animation-duration: 7.6s;
+  animation-delay: -1.2s;
+}
+
+.dust-5 {
+  top: 78%;
+  left: 12%;
+  animation-duration: 9.6s;
+  animation-delay: -4.1s;
 }
 
 .meltdown-overlay {
   position: fixed;
   inset: 0;
-  z-index: 2000;
+  z-index: 12;
   display: grid;
   place-items: center;
-  padding: 24px;
-  background: rgba(0, 0, 0, 0.82);
-  backdrop-filter: blur(8px);
-  animation: meltdown-overlay-enter 0.45s ease forwards;
+  padding: clamp(1rem, 4vw, 2rem);
+  background: rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(0.9rem);
+  animation: meltdown-overlay-enter 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .meltdown-panel {
-  width: min(100%, 460px);
-  padding: 28px 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  background: linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(8, 8, 8, 0.98));
+  width: min(100%, 30rem);
+  padding: clamp(1.4rem, 4vw, 2rem);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(229, 9, 20, 0.32);
+  background:
+    linear-gradient(180deg, rgba(28, 28, 28, 0.82), rgba(10, 10, 10, 0.9)),
+    rgba(14, 14, 14, 0.86);
+  box-shadow:
+    0 1.5rem 4rem rgba(0, 0, 0, 0.52),
+    0 0 0.9rem rgba(229, 9, 20, 0.18);
   text-align: center;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
 }
 
 .meltdown-warning {
   margin: 0;
-  font-size: clamp(1.4rem, 4vw, 2rem);
-  font-weight: 700;
-  color: #f5f5f5;
+  font-family: Inter, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+  font-size: clamp(1.55rem, 4.3vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: #f7f7f7;
+  text-wrap: balance;
 }
 
 .meltdown-actions {
   display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 22px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
 }
 
 .meltdown-btn {
-  min-width: 170px;
-  padding: 12px 16px;
-  border: 0;
+  width: 100%;
+  padding: 0.95rem 1.2rem;
+  border: 1px solid transparent;
   border-radius: 999px;
-  font-size: 0.95rem;
+  font-size: clamp(0.92rem, 2.7vw, 1rem);
   font-weight: 700;
-  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .meltdown-btn:hover {
-  transform: translateY(-1px);
+  transform: translateY(-0.125rem);
 }
 
 .meltdown-btn.primary {
   background: #e50914;
   color: #fff;
+  box-shadow: 0 0.75rem 1.5rem rgba(229, 9, 20, 0.28);
 }
 
 .meltdown-btn.primary:hover {
   background: #f6121d;
+  box-shadow: 0 1rem 2rem rgba(229, 9, 20, 0.35);
 }
 
 .meltdown-btn.secondary {
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #f4f4f4;
 }
 
 .meltdown-btn.secondary:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
-@keyframes stalker-page-shake {
+@keyframes stalker-camera-warning {
   0% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 
-  8% {
-    transform: translate3d(-1px, 1px, 0) rotate(-0.15deg);
+  25% {
+    transform: translate3d(-0.12rem, 0.08rem, 0) scale(1.005);
   }
 
-  20% {
-    transform: translate3d(3px, -2px, 0) rotate(0.25deg);
+  50% {
+    transform: translate3d(0.15rem, -0.1rem, 0) scale(1.012);
   }
 
-  36% {
-    transform: translate3d(-6px, 4px, 0) rotate(-0.45deg);
-  }
-
-  54% {
-    transform: translate3d(10px, -8px, 0) rotate(0.6deg);
-  }
-
-  72% {
-    transform: translate3d(-16px, 10px, 0) rotate(-0.85deg);
-  }
-
-  88% {
-    transform: translate3d(22px, -14px, 0) rotate(1deg);
+  75% {
+    transform: translate3d(-0.16rem, 0.12rem, 0) scale(1.017);
   }
 
   100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
+    transform: translate3d(0.08rem, -0.06rem, 0) scale(1.02);
+  }
+}
+
+@keyframes stalker-camera-structural {
+  0% {
+    transform: translate3d(0.08rem, -0.06rem, 0) scale(1.02);
+  }
+
+  20% {
+    transform: translate3d(-0.32rem, 0.18rem, 0) scale(1.021);
+  }
+
+  40% {
+    transform: translate3d(0.45rem, -0.25rem, 0) scale(1.022);
+  }
+
+  60% {
+    transform: translate3d(-0.55rem, 0.32rem, 0) scale(1.023);
+  }
+
+  80% {
+    transform: translate3d(0.62rem, -0.38rem, 0) scale(1.022);
+  }
+
+  100% {
+    transform: translate3d(-0.28rem, 0.16rem, 0) scale(1.02);
+  }
+}
+
+@keyframes stalker-collapse-fade {
+  0% {
+    filter: brightness(1);
+  }
+
+  100% {
+    filter: brightness(0.45);
+  }
+}
+
+@keyframes stalker-vibrate-soft {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0.06rem, -0.03rem, 0);
+  }
+}
+
+@keyframes stalker-vibrate-hard {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate3d(-0.11rem, 0.07rem, 0);
+  }
+
+  50% {
+    transform: translate3d(0.13rem, -0.08rem, 0);
+  }
+
+  75% {
+    transform: translate3d(-0.1rem, -0.04rem, 0);
+  }
+}
+
+@keyframes stalker-navbar-jitter {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0.12rem, -0.08rem, 0);
+  }
+}
+
+@keyframes stalker-hero-glitch {
+  0%,
+  100% {
+    filter: saturate(1) contrast(1);
+    clip-path: inset(0 0 0 0);
+  }
+
+  50% {
+    filter: saturate(1.12) contrast(1.08);
+    clip-path: inset(0.35rem 0 0.2rem 0);
+  }
+}
+
+@keyframes stalker-shake-navbar {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate3d(-0.18rem, 0.06rem, 0);
+  }
+
+  50% {
+    transform: translate3d(0.18rem, -0.08rem, 0);
+  }
+
+  75% {
+    transform: translate3d(-0.12rem, -0.05rem, 0);
+  }
+}
+
+@keyframes stalker-shake-hero {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  20% {
+    transform: translate3d(0.18rem, -0.1rem, 0);
+  }
+
+  40% {
+    transform: translate3d(-0.22rem, 0.12rem, 0);
+  }
+
+  60% {
+    transform: translate3d(0.22rem, 0.16rem, 0);
+  }
+
+  80% {
+    transform: translate3d(-0.18rem, -0.12rem, 0);
+  }
+}
+
+@keyframes stalker-shake-text {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0.12rem, -0.08rem, 0);
+  }
+}
+
+@keyframes stalker-shake-title {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-0.14rem, 0.08rem, 0);
+  }
+}
+
+@keyframes stalker-shake-card {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate3d(-0.12rem, 0.08rem, 0);
+  }
+
+  50% {
+    transform: translate3d(0.14rem, -0.12rem, 0);
+  }
+
+  75% {
+    transform: translate3d(-0.08rem, -0.04rem, 0);
   }
 }
 
@@ -156,30 +502,29 @@
   0% {
     opacity: 1;
     filter: blur(0);
-    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    transform: translate3d(0, 0, 0) rotate(0deg);
   }
 
-  18% {
+  20% {
     opacity: 1;
-    transform: translate3d(calc(var(--meltdown-x) * 0.18), 20px, 0)
-      rotate(calc(var(--meltdown-rotate) * 0.18)) scale(0.995);
+    transform: translate3d(calc(var(--meltdown-x) * 0.35), 12vh, 0)
+      rotate(calc(var(--meltdown-rotate) * 0.25));
   }
 
-  55% {
-    opacity: 0.92;
-    transform: translate3d(calc(var(--meltdown-x) * 0.7), 46vh, 0)
-      rotate(calc(var(--meltdown-rotate) * 0.7)) scale(0.96);
+  65% {
+    opacity: 0.96;
+    transform: translate3d(calc(var(--meltdown-x) * 0.8), 62vh, 0)
+      rotate(calc(var(--meltdown-rotate) * 0.75));
   }
 
   100% {
     opacity: 0;
-    filter: blur(1.5px);
-    transform: translate3d(var(--meltdown-x), 122vh, 0)
-      rotate(var(--meltdown-rotate)) scale(0.9);
+    filter: blur(1.2px);
+    transform: translate3d(var(--meltdown-x), 124vh, 0) rotate(var(--meltdown-rotate));
   }
 }
 
-@keyframes meltdown-overlay-enter {
+@keyframes meltdown-atmosphere-enter {
   from {
     opacity: 0;
   }
@@ -189,13 +534,64 @@
   }
 }
 
-@media (max-width: 768px) {
-  .meltdown-panel {
-    padding: 24px 20px;
-    border-radius: 18px;
+@keyframes dust-drift {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.8);
+  }
+
+  20% {
+    opacity: 0.24;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(1rem, -2.4rem, 0) scale(1.2);
+  }
+}
+
+@keyframes meltdown-overlay-enter {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes meltdown-panel-enter {
+  0% {
+    opacity: 0;
+    filter: blur(0.75rem);
+    transform: translateY(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.meltdown-panel {
+  animation: meltdown-panel-enter 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@media (min-width: 700px) {
+  .meltdown-actions {
+    flex-direction: row;
   }
 
   .meltdown-btn {
-    width: 100%;
+    width: auto;
+    min-width: 12.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .stalker-page.meltdown-warning .stalker-page-shell,
+  .stalker-page.meltdown-structural .stalker-page-shell {
+    transform-origin: center 25%;
   }
 }

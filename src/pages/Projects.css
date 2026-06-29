@@ -1,77 +1,68 @@
 .projects-page {
-  background: #141414;
   min-height: 100vh;
-  padding: clamp(96px, 15vh, 120px) clamp(16px, 5vw, 80px);
+  padding: clamp(5.75rem, 12vh, 7.5rem) clamp(1rem, 5vw, 5rem) clamp(3rem, 8vh, 5rem);
+  background: #141414;
   color: white;
 }
 
 .projects-title {
+  margin-bottom: clamp(2.25rem, 8vh, 3.75rem);
+  text-align: center;
   font-size: clamp(1.8rem, 4vw, 3rem);
-  margin-bottom: clamp(36px, 8vh, 60px);
-  text-align: center;}
+}
 
-/* GRID */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: clamp(20px, 4vw, 40px);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17.5rem), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
 }
 
-/* CARD */
 .project-card {
-  background: #1f1f1f;
-  border-radius: 16px;
   overflow: hidden;
-
-  /* 🔴 Thin red outline */
   border: 1px solid rgba(229, 9, 20, 0.7);
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.55);
+  border-radius: 1rem;
+  background: #1f1f1f;
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.55);
 }
 
-/* IMAGE */
 .project-card img {
   width: 100%;
-  height: clamp(160px, 30vw, 220px);
+  aspect-ratio: 16 / 10;
   object-fit: cover;
 }
 
-/* CONTENT */
 .project-content {
-  padding: clamp(16px, 4vw, 24px);
   position: relative;
+  padding: clamp(1rem, 4vw, 1.5rem);
 }
 
-/* THIN RED DIVIDER */
 .project-content::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 24px;
-  right: 24px;
+  left: clamp(1rem, 4vw, 1.5rem);
+  right: clamp(1rem, 4vw, 1.5rem);
   height: 1px;
   background: rgba(229, 9, 20, 0.8);
 }
 
-/* HEADER WITH ICONS */
 .project-header {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-  margin-top: 12px;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
 }
 
 .project-header h2 {
-  color: #e50914;
   font-size: clamp(1.05rem, 3vw, 1.3rem);
+  color: #e50914;
 }
 
-/* ICON LINKS — RED, STATIC */
 .project-links {
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 .project-links a {
@@ -79,33 +70,34 @@
   font-size: 0.95rem;
 }
 
-/* DESCRIPTION */
 .project-content p {
-  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-  color: #ddd;
+  font-size: clamp(0.88rem, 2.5vw, 0.95rem);
   line-height: 1.6;
+  color: #ddd;
 }
 
-/* TECH PILLS */
 .tech-stack {
-  margin-top: clamp(12px, 3vh, 18px);
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(8px, 2vw, 10px);
+  gap: 0.625rem;
+  margin-top: 1rem;
 }
 
 .tech-stack span {
-  background: #111;
+  padding: 0.35rem 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: clamp(4px, 1.5vw, 6px) clamp(10px, 3vw, 12px);
-  border-radius: 20px;
-  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  border-radius: 1.25rem;
+  background: #111;
+  font-size: clamp(0.72rem, 2vw, 0.8rem);
   color: #bbb;
 }
 
-/* MOBILE */
 @media (max-width: 480px) {
-  .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  .project-header {
+    flex-direction: column;
+  }
+
+  .project-links {
+    align-self: flex-start;
   }
 }

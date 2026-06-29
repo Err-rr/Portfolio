@@ -1,7 +1,7 @@
 .skills-page {
   background: #141414;
   min-height: 100vh;
-  padding: clamp(96px, 15vh, 120px) clamp(16px, 5vw, 80px);
+  padding: clamp(5.75rem, 12vh, 7.5rem) clamp(1rem, 5vw, 5rem) clamp(3rem, 8vh, 5rem);
   color: white;
 }
 

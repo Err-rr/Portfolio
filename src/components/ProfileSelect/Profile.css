@@ -10,6 +10,7 @@
 
   padding: clamp(24px, 6vh, 64px);
   text-align: center;
+  overflow-x: clip;
 }
 
 .watching-title {
@@ -31,6 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 0;
 
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -82,6 +84,15 @@
 
 /* MOBILE TUNING */
 @media (max-width: 480px) {
+  .profile-list {
+    width: 100%;
+    gap: 16px;
+  }
+
+  .profile-card {
+    width: calc(50% - 8px);
+  }
+
   .profile-card:hover {
     transform: scale(1.05);
   }

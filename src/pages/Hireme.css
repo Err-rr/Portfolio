@@ -8,7 +8,10 @@
   justify-content: center;
 
   color: #e5e5e5;
-  padding: clamp(32px, 6vh, 80px) clamp(16px, 5vw, 32px);
+  padding:
+    clamp(5.75rem, 12vh, 7rem)
+    clamp(1rem, 5vw, 2rem)
+    clamp(2rem, 6vh, 3rem);
 }
 
 /* CARD */
@@ -115,10 +118,19 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  max-width: 100%;
+  text-align: left;
 
   background: #1f1f1f;
   padding: clamp(8px, 2vw, 10px) clamp(12px, 3vw, 14px);
   border-radius: 999px;
+}
+
+@media (max-width: 480px) {
+  .hire-contact span {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* FOOTER */

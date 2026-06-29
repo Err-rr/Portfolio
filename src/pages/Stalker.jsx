@@ -7,14 +7,23 @@ import stalkerProfile from "../assets/profiles/stalker.png";
 import { PROFILE_ROWS } from "../constants/profileRows";
 import "./Stalker.css";
 
+const MELTDOWN_SEQUENCE = {
+  warning: { next: "structural", duration: 1500 },
+  structural: { next: "collapse", duration: 1500 },
+  collapse: { next: "aftermath", duration: 2200 },
+  aftermath: { next: "complete", duration: 800 },
+};
+
 export default function Stalker() {
   const [meltdownPhase, setMeltdownPhase] = useState("idle");
   const pageRef = useRef(null);
+  const timersRef = useRef([]);
   const heroImage =
     "https://i.pinimg.com/1200x/18/05/e6/1805e681830f8b727637b176c7057e83.jpg";
 
   const rows = PROFILE_ROWS.stalker;
   const isMelting = meltdownPhase !== "idle";
+  const showOverlay = meltdownPhase === "complete";
 
   useEffect(() => {
     document.body.classList.toggle("stalker-meltdown-lock", isMelting);
@@ -26,42 +35,56 @@ export default function Stalker() {
 
   useEffect(() => {
     const root = pageRef.current;
-    if (!root || meltdownPhase !== "melting") return undefined;
+    if (!root || !isMelting) {
+      return undefined;
+    }
 
     const fragments = Array.from(
-      root.querySelectorAll(".netflix-navbar, .hero, .row-title, .poster"),
+      root.querySelectorAll(
+        [
+          ".stalker-page-shell",
+          ".netflix-navbar",
+          ".nav-left",
+          ".nav-right",
+          ".nav-links li",
+          ".hire-btn",
+          ".logo",
+          ".profile-avatar",
+          ".menu-toggle",
+          ".hero",
+          ".hero-content",
+          ".hero-title",
+          ".hero-desc",
+          ".hero-buttons",
+          ".hero-btn",
+          ".row",
+          ".row-title",
+          ".row-posters",
+          ".poster",
+          ".poster-overlay",
+          ".poster-title",
+        ].join(", "),
+      ),
     );
 
     fragments.forEach((element, index) => {
       const direction = index % 2 === 0 ? -1 : 1;
-      const lateral = 40 + (index % 5) * 24;
-      const rotation = 8 + (index % 7) * 3;
-      const duration = 2.4 + (index % 4) * 0.18;
-      const delay = Math.min(index * 0.08, 0.95);
+      const lateral = 8 + (index % 5) * 6;
+      const rotation = 1.2 + (index % 4) * 0.35;
+      const duration = 1.95 + (index % 4) * 0.12;
+      const delay = Math.min(index * 0.014, 0.18);
 
       element.classList.add("meltdown-fragment");
       element.style.setProperty("--meltdown-delay", `${delay}s`);
-      element.style.setProperty(
-        "--meltdown-x",
-        `${direction * lateral}px`,
-      );
+      element.style.setProperty("--meltdown-x", `${direction * lateral}px`);
       element.style.setProperty(
         "--meltdown-rotate",
         `${direction * rotation}deg`,
       );
-      element.style.setProperty(
-        "--meltdown-duration",
-        `${duration}s`,
-      );
+      element.style.setProperty("--meltdown-duration", `${duration}s`);
     });
 
-    const timer = window.setTimeout(() => {
-      setMeltdownPhase("complete");
-    }, 3900);
-
     return () => {
-      window.clearTimeout(timer);
-
       fragments.forEach((element) => {
         element.classList.remove("meltdown-fragment");
         element.style.removeProperty("--meltdown-delay");
@@ -70,7 +93,38 @@ export default function Stalker() {
         element.style.removeProperty("--meltdown-duration");
       });
     };
+  }, [isMelting]);
+
+  useEffect(() => {
+    timersRef.current.forEach((timer) => window.clearTimeout(timer));
+    timersRef.current = [];
+
+    if (meltdownPhase === "idle" || meltdownPhase === "complete") {
+      return undefined;
+    }
+
+    const phaseConfig = MELTDOWN_SEQUENCE[meltdownPhase];
+    if (!phaseConfig) {
+      return undefined;
+    }
+
+    const timer = window.setTimeout(() => {
+      setMeltdownPhase(phaseConfig.next);
+    }, phaseConfig.duration);
+
+    timersRef.current = [timer];
+
+    return () => {
+      window.clearTimeout(timer);
+      timersRef.current = [];
+    };
   }, [meltdownPhase]);
+
+  useEffect(() => {
+    return () => {
+      timersRef.current.forEach((timer) => window.clearTimeout(timer));
+    };
+  }, []);
 
   const handleItemClick = (item) => {
     if (item.title !== "Do Not Open") {
@@ -78,21 +132,25 @@ export default function Stalker() {
     }
 
     if (meltdownPhase === "idle") {
-      setMeltdownPhase("melting");
+      setMeltdownPhase("warning");
     }
 
     return false;
   };
 
   const handleGoBack = () => {
+    timersRef.current.forEach((timer) => window.clearTimeout(timer));
+    timersRef.current = [];
     setMeltdownPhase("idle");
   };
 
   return (
     <div
       ref={pageRef}
-      className={`stalker-page ${meltdownPhase === "melting" ? "meltdown-active" : ""} ${meltdownPhase === "complete" ? "meltdown-complete" : ""}`}
+      className={`stalker-page meltdown-${meltdownPhase}`}
     >
+      <div className="meltdown-vignette" aria-hidden="true" />
+
       <div className="stalker-page-shell">
         <Navbar
           profileImage={stalkerProfile}
@@ -120,10 +178,20 @@ export default function Stalker() {
         />
       </div>
 
-      {meltdownPhase === "complete" ? (
+      {(meltdownPhase === "aftermath" || showOverlay) ? (
+        <div className="meltdown-atmosphere" aria-hidden="true">
+          <span className="dust dust-1" />
+          <span className="dust dust-2" />
+          <span className="dust dust-3" />
+          <span className="dust dust-4" />
+          <span className="dust dust-5" />
+        </div>
+      ) : null}
+
+      {showOverlay ? (
         <div className="meltdown-overlay" role="dialog" aria-modal="true">
           <div className="meltdown-panel">
-            <p className="meltdown-warning">⚠ Curiosity has consequences.</p>
+            <p className="meltdown-warning">{"\u26A0 Curiosity has consequences."}</p>
             <div className="meltdown-actions">
               <button
                 type="button"

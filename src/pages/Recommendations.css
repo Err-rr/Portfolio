@@ -6,7 +6,10 @@
   justify-content: center;
   align-items: center;
 
-  padding: clamp(20px, 5vw, 80px);
+  padding:
+    clamp(5.75rem, 12vh, 7rem)
+    clamp(1rem, 5vw, 5rem)
+    clamp(2rem, 6vh, 4rem);
 }
 
 .recommendation-card {
@@ -84,12 +87,6 @@
 @media (max-width: 600px) {
   .recommendations-page {
     align-items: flex-start;
-    padding-top: 96px;
-  }
-}
-@media (max-width: 600px) {
-  .recommendations-page {
-    align-items: flex-start;
-    padding-top: 96px;
+    padding-top: clamp(5.75rem, 12vh, 7rem);
   }
 }

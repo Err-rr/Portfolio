@@ -10,6 +10,20 @@ import { PROFILE_IMAGES } from "../assets/profiles";
 
 const timelineData = [
   {
+  type: "work",
+  side: "right",
+  date: "Jul 2025 - Present",
+  title: "AI Generalist",
+  org: "Young Founders School, Remote",
+  tech: "Next.js • AWS Lambda • AWS Amplify • Google Apps Script",
+  desc: [
+    "Migrated Workskills backend to AWS Lambda, serving 8,000+ monthly users.",
+    "Built and deployed Bootcamp AI as a full-stack AI product.",
+    "Automated student allocation across 11 facilitators using a weighted algorithm.",
+  ],
+},
+
+  {
     type: "work",
     side: "left",
     date: "Jun 2026 - Present",

@@ -14,7 +14,7 @@ const timelineData = [
   side: "right",
   date: "Jul 2025 - Present",
   title: "AI Generalist",
-  org: "Young Founders School, Remote",
+  org: "Young Founders School, Intern",
   tech: "Next.js • AWS Lambda • AWS Amplify • Google Apps Script",
   desc: [
     "Migrated Workskills backend to AWS Lambda, serving 8,000+ monthly users.",
@@ -28,7 +28,7 @@ const timelineData = [
     side: "left",
     date: "Jun 2026 - Present",
     title: "Full Stack Developer",
-    org: "FocusDesk, Remote",
+    org: "FocusDesk, Intern",
     tech: "Node.js • PostgreSQL • REST APIs • Redis",
     desc: [
       "Developing backend for authentication, session orchestration, and platform workflows.",
@@ -42,7 +42,7 @@ const timelineData = [
     side: "right",
     date: "May 2025 - Sep 2025",
     title: "Full Stack Developer",
-    org: "TripXPay, Hybrid",
+    org: "TripXPay, Intern",
     tech: "Next.js • Firebase • Node.js • REST APIs",
     desc: [
       "Built production-ready features for a B2B travel-fintech platform.",
@@ -56,7 +56,7 @@ const timelineData = [
    side: "left",
    date: "May 2025 - Aug 2025",
    title: "AI Frontend Trainer",
-   org: "Outlier, Remote",
+   org: "Outlier, Freelancing",
    tech: "React • Next.js • JavaScript • Prompt Engineering",
    desc: [
       "Contributed to training AI models for generating modern, responsive frontend interfaces.",
